@@ -4,6 +4,7 @@
   background: url("/assets/img/Hero_Background.png") no-repeat center center;
   background-size: cover;
   position: relative;
+  //z-index: 1;
   overflow: hidden;
 }
 
@@ -43,7 +44,7 @@
   height: 40px;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.12);
-  overflow: hidden;
+  //overflow: hidden;
   box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.06);
   z-index: 8;
 }
@@ -68,5 +69,59 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+.circle-container {
+  position: absolute;
+  bottom: 0;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  left: 64px;
+  z-index: 7;
+}
+
+.circle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  > img {
+    width: 30px;
+    height: 48px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 25%;
+  animation: arrow-move 1.4s infinite;
+
+  > img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.vertical-line {
+  width: 1px;
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+@keyframes arrow-move {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
