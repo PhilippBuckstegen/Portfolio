@@ -36,7 +36,7 @@
 }
 
 .ticker {
-  position: fixed;
+  position: absolute;
   bottom: 80px;
   left: -8px;
   transform: rotate(-4deg);
@@ -53,7 +53,7 @@
   justify-content: center;
   display: flex;
   white-space: nowrap;
-  animation: ticker-scroll 20s linear infinite;
+  animation: ticker-scroll 16s linear infinite;
   width: 100%;
   > span {
     display: inline-block;
