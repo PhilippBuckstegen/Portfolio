@@ -1,0 +1,94 @@
+.skill-set-container {
+  background: url("/assets/img/skill_set_background.png") no-repeat center
+    center;
+  background-color: var(--background-color-green);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  padding: 96px 64px;
+  gap: 24px;
+
+  .info-container {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+
+    .info-heading {
+      font-size: 24px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .info-box-container {
+      width: 100%;
+      border: 1px solid var(--primary-color);
+      border-radius: 30px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-sizing: border-box;
+      background-color: var(--primary-color-transparent);
+
+      .info-title {
+        font-size: 64px;
+        line-height: 64px;
+        margin-bottom: 28px;
+        color: var(--primary-color);
+      }
+
+      .info-paragraph {
+        font-size: 18px;
+        line-height: 21.6px;
+        color: var(--secondary-color);
+        margin-bottom: 32px;
+      }
+
+      .another-skill {
+        .detail-text {
+          font-size: 24px;
+          line-height: 28.8px;
+          color: var(--secondary-color);
+          margin-bottom: 18px;
+          > span {
+            color: var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+
+  /* Grid layout for icons */
+  .skills-icons {
+    width: 50%; /* Rechte Seite mit Grid-Layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon-grid {
+      display: grid;
+      //grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      width: 100%;
+
+      .icon-item {
+        height: 56px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
