@@ -1,0 +1,99 @@
+.about-me-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 64px;
+    background-color: var(--background-color);
+  
+    .about-images {
+      position: relative;
+      width: 560px;
+      height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      .image {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+  
+      .image-1 {
+        top: 0;
+        left: 0;
+        z-index: 2;
+      }
+  
+      .image-2 {
+        top: 32px;
+        left: -32px;
+        z-index: 1;
+        opacity: 0.8;
+      }
+    }
+  
+    .info-container {
+      width: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  
+      .info-heading {
+        font-size: 24px;
+        color: var(--primary-color);
+        margin-bottom: 20px;
+      }
+  
+      .info-box-container {
+        width: 100%;
+        border: 1px solid var(--primary-color);
+        border-radius: 30px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-sizing: border-box;
+        background-color: var(--primary-color-transparent);
+  
+        .info-title {
+          font-size: 36px;
+          margin-bottom: 10px;
+          color: var(--primary-color);
+        }
+  
+        .info-paragraph {
+          font-size: 16px;
+          line-height: 1.6;
+          color: var(--secondary-color);
+          margin-bottom: 20px;
+        }
+  
+        .details-container {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+  
+          .detail-item {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+  
+            .detail-image {
+              width: 100px;
+              height: 100px;
+              object-fit: cover;
+              border-radius: 10px;
+            }
+  
+            .detail-text {
+              font-size: 16px;
+              color: var(--secondary-color);
+            }
+          }
+        }
+      }
+    }
+  }
+  

@@ -19,10 +19,16 @@
   > span {
     font-size: 20px;
     color: var(--secondary-color);
-    line-height: 20px;
     &:hover {
       cursor: pointer;
       color: var(--primary-color);
     }
+  }
+}
+
+.img-lang {
+  cursor: pointer;
+  &:hover {
+    content: url('../../../assets/img/default_hover.svg');
   }
 }
