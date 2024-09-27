@@ -1,0 +1,30 @@
+.projects-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 96px 64px;
+  background-color: var(--background-color);
+  gap: 32px;
+
+  .featured-projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .info-heading {
+      font-size: 24px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .info-title {
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+      color: var(--primary-color);
+      
+    }
+  }
+}
