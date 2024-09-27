@@ -7,8 +7,9 @@
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 96px 64px;
-  gap: 24px;
+  gap: 32px;
 
   .info-container {
     width: 520px;
@@ -64,29 +65,88 @@
 
   /* Grid layout for icons */
   .skills-icons {
-    width: 50%; /* Rechte Seite mit Grid-Layout */
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    top: 52px;
 
     .icon-grid {
       display: grid;
-      //grid-template-columns: repeat(4, 1fr);
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 20px;
+      gap: 32px 20px;
       justify-items: center;
       width: 100%;
 
       .icon-item {
-        height: 56px;
         width: auto;
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        cursor: default;
+        position: relative;
 
         img {
-          width: 100%;
-          height: auto;
+          width: auto;
+          height: 56px;
+          object-fit: contain;
+          transition: transform 0.25s ease-in-out;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+
+        .icon-text {
+          font-size: 18px;
+          line-height: 21.6px;
+          letter-spacing: -0.6px;
+          color: var(--secondary-color);
+          margin-top: 12px;
+          text-align: center;
+        }
+
+        /* Growth Mindset Sprechblase */
+        .growth-mindset {
+          position: absolute;
+          bottom: 96%; /* Positioniere die Sprechblase über dem Icon */
+          left: 118%;
+          transform: translateX(-50%);
+          background-color: #fff; /* Weißer Hintergrund */
+          color: #333; /* Dunkler Text */
+          width: 188px; /* Feste Breite */
+          height: 112px; /* Feste Höhe */
+          border-radius: 16px; /* Abgerundete Ecken */
+          padding: 16px; /* Innenabstand */
+          font-size: 14px;
+          white-space: normal;
+          opacity: 0; /* Unsichtbar bis Hover */
+          transition: opacity 0.25s ease-in-out;
+          pointer-events: none; /* Verhindert, dass die Sprechblase Maus-Ereignisse blockiert */
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          /* Dreieck unten links an der Sprechblase */
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -16px; /* Positioniere das Dreieck unterhalb */
+            left: 48px; /* Links platzieren */
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 16px 0 16px; /* Breite und Höhe des Dreiecks */
+            border-color: #fff transparent transparent transparent; /* Dreieck in Weiß */
+            border-bottom-left-radius: 6px; /* Leicht abgerundete Kante am Dreieck */
+          }
+        }
+
+        /* Sprechblase wird bei Hover sichtbar */
+        &:hover .growth-mindset {
+          opacity: 1;
         }
       }
     }
