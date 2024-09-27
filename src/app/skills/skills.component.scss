@@ -111,15 +111,15 @@
         .growth-mindset {
           position: absolute;
           bottom: 96%; /* Positioniere die Sprechblase über dem Icon */
-          left: 118%;
+          left: 84%;
           transform: translateX(-50%);
           background-color: #fff; /* Weißer Hintergrund */
-          color: #333; /* Dunkler Text */
-          width: 188px; /* Feste Breite */
+          color: var(--primary-color); /* Dunkler Text */
+          width: 150px; /* Feste Breite */
           height: 112px; /* Feste Höhe */
           border-radius: 16px; /* Abgerundete Ecken */
-          padding: 16px; /* Innenabstand */
-          font-size: 14px;
+          padding: 12px; /* Innenabstand */
+          font-size: 16px;
           white-space: normal;
           opacity: 0; /* Unsichtbar bis Hover */
           transition: opacity 0.25s ease-in-out;
@@ -128,6 +128,7 @@
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          text-align: center;
 
           /* Dreieck unten links an der Sprechblase */
           &::after {
@@ -147,6 +148,30 @@
         /* Sprechblase wird bei Hover sichtbar */
         &:hover .growth-mindset {
           opacity: 1;
+        }
+
+        .special-interest-icons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 28px;
+          margin-top: 16px;
+
+          .react-vue-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            & p {
+              text-align: center;
+              font-size: 14px;
+            }
+            & img {
+                width: 32px;
+                height: auto;
+            }
+          }
         }
       }
     }
