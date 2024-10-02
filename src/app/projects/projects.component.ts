@@ -14,22 +14,26 @@ export class ProjectsComponent {
     {
       id: 1,
       title: 'Join',
-      usedSkills: ['JavaScript', 'HTML', 'CSS', 'Figma']
+      usedSkills: ['JavaScript', 'HTML', 'CSS', 'Figma'],
+      image: '/assets/img/join-image-project.png',
     },
     {
       id: 2,
       title: 'El Pollo Loco',
-      usedSkills: ['JavaScript', 'HTML', 'CSS', 'OOP']
+      usedSkills: ['JavaScript', 'HTML', 'CSS', 'OOP'],
+      image: '/assets/img/join-image-project.png',
     },
     {
       id: 3,
       title: 'Portfolio Website',
-      usedSkills: ['Angular', 'TypeScript', 'HTML', 'SCSS', 'Figma']
+      usedSkills: ['Angular', 'TypeScript', 'HTML', 'SCSS', 'Figma'],
+      image: '/assets/img/join-image-project.png',
     },
     {
       id: 4,
       title: 'Pokedex',
-      usedSkills: ['JavaScript', 'HTML', 'CSS', 'API']
+      usedSkills: ['JavaScript', 'HTML', 'CSS', 'API'],
+      image: '/assets/img/join-image-project.png',
     }
   ];
 

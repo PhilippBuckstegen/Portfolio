@@ -8,20 +8,30 @@
     </p>
   </div>
 
-  <div class="projects-list">
-    @for (project of projects; track $index) {
-      <div class="project-item">
-        <h3 class="sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
-        <p class="fontKarla fs-18 sec-col">
-          @for (skill of project.usedSkills; track $index) {
-            <span>{{ skill }}</span>
-            @if (skill !== project.usedSkills[project.usedSkills.length - 1]) {
-              <span class="pri-col"> | </span>
+
+  <div class="projects">
+    <div class="projects-list">
+      @for (project of projects; track $index) {
+        <div class="project-item">
+          <h3 class="sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
+          <p class="fontKarla fs-18 sec-col">
+            @for (skill of project.usedSkills; track $index) {
+              <span>{{ skill }}</span>
+              @if (skill !== project.usedSkills[project.usedSkills.length - 1]) {
+                <span class="pri-col"> | </span>
+              }
             }
-          }
-        </p>
-      </div>
-    }
+          </p>
+          <div class="project-images">
+        
+            <img src="{{project.image}}" alt="project-image">
+          
+        </div>
+        </div>
+        
+      }
+    </div>
+    
   </div>
   
 </section>
