@@ -1,10 +1,6 @@
 .projects-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 96px 64px;
   background-color: var(--background-color);
-  gap: 32px;
 
   .featured-projects {
     display: flex;
@@ -24,7 +20,30 @@
       letter-spacing: -1px;
       margin-bottom: 28px;
       color: var(--primary-color);
-      
+    }
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 880px;
+
+    .project-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 24px;
+      width: 90%;
+      border-top: 1px solid var(--primary-color);
+      &:hover {
+        cursor: pointer;
+        background-color: var(--background-color-green);
+      }
+    }
+
+    .project-item:last-child {
+      border-bottom: 1px solid var(--primary-color);
     }
   }
 }

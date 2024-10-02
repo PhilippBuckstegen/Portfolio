@@ -1,5 +1,5 @@
 <section class="projects-container">
-  <div class="featured-projects">
+  <div class="featured-projects mb-20">
     <p class="fontKarla-700 info-heading">Portfolio</p>
     <h1 class="info-title fontFiraCode-700">Featured Projects</h1>
     <p class="fontKarla fs-18 sec-col mb-20">
@@ -7,4 +7,21 @@
       skills in action.
     </p>
   </div>
+
+  <div class="projects-list">
+    @for (project of projects; track $index) {
+      <div class="project-item">
+        <h3 class="sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
+        <p class="fontKarla fs-18 sec-col">
+          @for (skill of project.usedSkills; track $index) {
+            <span>{{ skill }}</span>
+            @if (skill !== project.usedSkills[project.usedSkills.length - 1]) {
+              <span class="pri-col"> | </span>
+            }
+          }
+        </p>
+      </div>
+    }
+  </div>
+  
 </section>
