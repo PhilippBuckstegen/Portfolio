@@ -39,7 +39,9 @@
   <!-- TEST OVERLAY -->
   <div class="project-overlay" [ngClass]="{'active': isOverlayOpen}">
     <div class="overlay-content">
-      <button class="close-btn" (click)="closeOverlay()">Close</button>
+      <div class="close-btn" (click)="closeOverlay()">
+        <img src="/assets/icons/close_small.svg" alt="close">
+      </div>
       <!-- Render Overlay Content hier -->
       <h2>{{ selectedProject?.title }}</h2>
       <p>{{ selectedProject?.count }}</p>

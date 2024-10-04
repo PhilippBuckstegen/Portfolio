@@ -3,6 +3,7 @@ export interface Project {
     count: string;
     title: string;
     usedSkills: string[];
+    iconSkills: string[];
     image: string;
     bgImage: string;
   }
