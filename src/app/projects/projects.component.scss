@@ -31,7 +31,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 880px;
+      width: 70%;
       position: relative;
 
       .project-item {
@@ -50,6 +50,21 @@
             visibility: visible;
           }
         }
+
+        &:first-child .project-images {
+          top: 0;
+          bottom: auto;
+        }
+
+        &:last-child .project-images {
+          top: -100%;
+        }
+
+        &:not(:first-child):not(:last-child) .project-images {
+          top: -50%;
+          transform: translateY(-50%);
+          bottom: auto;
+        }
       }
 
       .project-item:last-child {
@@ -58,14 +73,75 @@
 
       .project-images {
         position: absolute;
-        top: 0;
-        right: -200px;
+        right: -216px;
         width: 150px;
         height: auto;
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
+
+        #projectImage {
+          position: absolute;
+          z-index: 2;
+        }
+
+        #bgImage {
+          position: absolute;
+          top: 16px;
+          right: -164px;
+        }
       }
+    }
+  }
+
+  /* Overlay-Hintergrund */
+  .overlay-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Abdunklung des Hintergrunds */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease;
+    z-index: 900;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  /* Overlay für Projektdetails */
+  .project-overlay {
+    position: fixed;
+    top: 50%;
+    right: -100%; /* Startet außerhalb des Bildschirms */
+    transform: translateY(-50%);
+    width: 60%;
+    height: 80vh;
+    background: url("/assets/img/Hero_Background.png") no-repeat center center;
+    background-size: cover; /* Hintergrundbild abdecken */
+    border: 1px solid var(--primary-color); /* Border mit 1px in der primary color */
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Leichter Box-Shadow */
+    transition: right 0.5s ease, opacity 0.5s ease;
+    z-index: 1000;
+
+    &.active {
+      right: 20px; /* Fährt ins Bild */
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
     }
   }
 }
