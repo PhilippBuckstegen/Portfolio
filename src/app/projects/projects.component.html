@@ -62,8 +62,14 @@
           }
         </div>
         <div class="overlay-btns">
-          <button class="btn fontKarla">GitHub</button>
-          <button class="btn fontKarla">Live Test</button>
+          <button class="btn fontKarla">
+            GitHub
+            <img src="/assets/icons/arrow_outward.svg" alt="GitHub Arrow" />
+          </button>
+          <button class="btn fontKarla">
+            Live Test
+            <img src="/assets/icons/arrow_outward.svg" alt="Live Test Arrow" />
+          </button>
         </div>
       </div>
 
@@ -72,6 +78,10 @@
           <img src="/assets/icons/close_small.svg" alt="close" />
         </div>
         <img src="{{ selectedProject?.image }}" alt="Project Overlay Image" />
+        <div class="next-project" (click)="showNextProject()">
+          <span class="fontKarla fs-18 pri-col">Next Project</span>
+          <img src="/assets/icons/arrow_forward.svg" alt="Next Project" />
+        </div>
       </div>
     </div>
   </div>

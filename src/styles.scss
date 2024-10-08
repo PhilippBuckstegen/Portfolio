@@ -135,7 +135,7 @@ html {
 }
 
 .btn {
-  padding: 0 20px 0 20px;
+  padding: 0 20px;
   border: 1px solid var(--secondary-color);
   border-radius: 100px;
   height: 48px;
@@ -143,8 +143,22 @@ html {
   background-color: transparent;
   cursor: pointer;
   font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border 0.3s ease-in-out, color 0.3s ease-in-out;
   &:hover {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
+    img {
+      transform: translate(2px, -2px);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  img {
+    width: 12px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
   }
 }

@@ -122,7 +122,7 @@
     right: -100%;
     transform: translateY(-50%);
     width: 80%;
-    height: 60vh;
+    //height: 60vh;
     background: url("/assets/img/Hero_Background.png") no-repeat center center;
     background-size: cover;
     border: 1px solid var(--primary-color);
@@ -137,11 +137,12 @@
     }
 
     .overlay-content {
-      padding: 32px;
+      padding: 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 36px;
+      height: 100%;
 
       .overlay-left {
         display: flex;
@@ -149,6 +150,7 @@
         justify-content: center;
         align-items: flex-start;
         width: 50%;
+        gap: 26px;
 
         .count {
           font-size: 128px;
@@ -157,7 +159,7 @@
 
         .title {
           font-size: 64px;
-          line-height: 51.2px;
+          line-height: 64.2px;
         }
 
         .overlay-skills {
@@ -182,6 +184,13 @@
             }
           }
         }
+
+        .overlay-btns {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 24px;
+        }
       }
 
       .overlay-right {
@@ -196,18 +205,45 @@
         }
 
         .close-btn {
+          position: absolute;
+          top: 40px;
+          right: 40px;
           cursor: pointer;
-    
+
           img {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             transition: transform 0.3s ease-in-out, filter 0.2s ease;
-    
             &:hover {
               transform: scale(1.2);
               filter: invert(53%) sepia(18%) saturate(5554%) hue-rotate(148deg)
                 brightness(93%) contrast(98%);
             }
+          }
+        }
+
+        .next-project {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 8px;
+          position: absolute;
+          right: 40px;
+          bottom: 40px;
+          cursor: pointer;
+          span {
+            &:hover {
+              color: var(--secondary-color);
+            }
+            &:hover + img {
+              transform: scale(1.2) translateX(6px);
+              transition: transform 0.3s ease-in-out;
+            }
+          }
+          img {
+            width: 18px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
           }
         }
       }

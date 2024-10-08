@@ -19,6 +19,7 @@
   > span {
     font-size: 20px;
     color: var(--secondary-color);
+    transition: color 0.3s ease-in-out;;
     &:hover {
       cursor: pointer;
       color: var(--primary-color);
