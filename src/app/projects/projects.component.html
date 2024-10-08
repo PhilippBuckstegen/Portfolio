@@ -3,55 +3,76 @@
     <p class="fontKarla-700 info-heading">Portfolio</p>
     <h1 class="info-title fontFiraCode-700">Featured Projects</h1>
     <p class="fontKarla fs-18 sec-col mb-20">
-      Explore a selection of my work here - Interact with<br>projects to see my
-      skills in action.
+      Explore a selection of my work here - Interact with<br />projects to see
+      my skills in action.
     </p>
   </div>
-
 
   <div class="projects">
     <div class="projects-list">
       @for (project of projects; track $index) {
-        <div class="project-item" (click)="openOverlay(project)">
-          <h3 class="sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
-          <p class="fontKarla fs-18 sec-col">
-            @for (skill of project.usedSkills; track $index) {
-              <span>{{ skill }}</span>
-              @if (skill !== project.usedSkills[project.usedSkills.length - 1]) {
-                <span class="pri-col"> | </span>
-              }
-            }
-          </p>
-          <div class="project-images">
-        
-            <img id="projectImage" src="{{project.image}}" alt="project-image">
-            <img id="bgImage" src="{{project.bgImage}}" alt="project-image-bg">
-          
+      <div class="project-item" (click)="openOverlay(project)">
+        <h3 class="sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
+        <p class="fontKarla fs-18 sec-col">
+          @for (skill of project.usedSkills; track $index) {
+          <span>{{ skill }}</span>
+          @if (skill !== project.usedSkills[project.usedSkills.length - 1]) {
+          <span class="pri-col"> | </span>
+          } }
+        </p>
+        <div class="project-images">
+          <img
+            id="projectImage"
+            src="{{ project.image }}"
+            alt="project-image"
+          />
+          <img
+            id="bgImage"
+            src="{{ project.bgImage }}"
+            alt="project-image-bg"
+          />
         </div>
-        </div>
-        
+      </div>
+
       }
     </div>
-    
   </div>
-  <div class="overlay-bg" [ngClass]="{'active': isOverlayOpen}"></div>
-  
-  <!-- TEST OVERLAY -->
-  <div class="project-overlay" [ngClass]="{'active': isOverlayOpen}">
+  <div class="overlay-bg" [ngClass]="{ active: isOverlayOpen }"></div>
+
+  <!-- Render overlay -->
+  <div class="project-overlay" [ngClass]="{ active: isOverlayOpen }">
     <div class="overlay-content">
-      <div class="close-btn" (click)="closeOverlay()">
-        <img src="/assets/icons/close_small.svg" alt="close">
+      <div class="overlay-left">
+        <p class="count fontKarla-700 pri-col">{{ selectedProject?.count }}</p>
+        <p class="title fontFiraCode-700 sec-col">
+          {{ selectedProject?.title }}
+        </p>
+        <p class="project-about fontFiraCode-700 fs-24 pri-col">
+          What is this project about?
+        </p>
+        <p class="description fontKarla fs-18 sec-col">
+          {{ selectedProject?.description }}
+        </p>
+        <div class="overlay-skills">
+          @for (item of getCombinedSkillsAndIcons(); track $index) {
+          <div class="icons-and-skills">
+            <img src="{{ item.icon }}" alt="Overlay Skill" />
+            <span class="fontKarla sec-col">{{ item.skill }}</span>
+          </div>
+          }
+        </div>
+        <div class="overlay-btns">
+          <button class="btn fontKarla">GitHub</button>
+          <button class="btn fontKarla">Live Test</button>
+        </div>
       </div>
-      <!-- Render Overlay Content hier -->
-      <h2>{{ selectedProject?.title }}</h2>
-      <p>{{ selectedProject?.count }}</p>
-      <ul>
-        @for (skill of selectedProject?.usedSkills; track $index) {
-          <li>{{ skill }}</li>
-        }
-      </ul>
-      <img src="{{selectedProject?.image}}" alt="Project Overlay Image">
+
+      <div class="overlay-right">
+        <div class="close-btn" (click)="closeOverlay()">
+          <img src="/assets/icons/close_small.svg" alt="close" />
+        </div>
+        <img src="{{ selectedProject?.image }}" alt="Project Overlay Image" />
+      </div>
     </div>
   </div>
-  
 </section>

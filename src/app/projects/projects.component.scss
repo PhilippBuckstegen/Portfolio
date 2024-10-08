@@ -83,6 +83,8 @@
         #projectImage {
           position: absolute;
           z-index: 2;
+          width: 296px;
+          height: 192px;
         }
 
         #bgImage {
@@ -134,26 +136,81 @@
       right: 10%;
     }
 
-    .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-
-      img {
-        width: 24px;
-        height: 24px;
-        transition: transform 0.3s ease-in-out, fill 0.3s ease;
-
-        &:hover {
-          transform: scale(1.2);
-          fill: var(--primary-color);
-        }
-      }
-    }
-
     .overlay-content {
       padding: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 36px;
+
+      .overlay-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 50%;
+
+        .count {
+          font-size: 128px;
+          line-height: 100px;
+        }
+
+        .title {
+          font-size: 64px;
+          line-height: 51.2px;
+        }
+
+        .overlay-skills {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 16px;
+
+          .icons-and-skills {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 4px;
+            img {
+              height: 24px;
+              width: auto;
+              filter: invert(53%) sepia(18%) saturate(5554%) hue-rotate(148deg);
+            }
+            span {
+              font-size: 16px;
+              line-height: 19.2px;
+            }
+          }
+        }
+      }
+
+      .overlay-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 50%;
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        .close-btn {
+          cursor: pointer;
+    
+          img {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease-in-out, filter 0.2s ease;
+    
+            &:hover {
+              transform: scale(1.2);
+              filter: invert(53%) sepia(18%) saturate(5554%) hue-rotate(148deg)
+                brightness(93%) contrast(98%);
+            }
+          }
+        }
+      }
     }
   }
 }
