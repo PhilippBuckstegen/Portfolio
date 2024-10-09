@@ -34,7 +34,7 @@ export class ReferencesComponent {
     },
   ];
 
-  currentIndex = 0;
+  currentIndex = 1;
 
   nextReference() {
     this.currentIndex = (this.currentIndex + 1) % this.references.length;
