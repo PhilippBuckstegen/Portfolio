@@ -27,11 +27,88 @@
   z-index: 1;
   h2 {
     text-align: center;
-    font-size: 32px;
-    line-height: 42px;
+  }
+}
+
+.references-carousel {
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 40px 0;
+
+  .carousel-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    padding: 24px 0;
   }
 
-  .refenrences {
-    
+  .reference-container {
+    width: 300px;
+    height: 200px;
+    border: 1px solid var(--primary-color);
+    background-color: var(--background-color-green);
+    border-radius: 30px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.3;
+
+    &.active {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    &.left {
+      opacity: 0.7;
+      transform: translateX(-24%);
+    }
+
+    &.right {
+      opacity: 0.7;
+      transform: translateX(24%);
+    }
+  }
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+
+  .carousel-arrow {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin: 0 16px;
+
+    &:hover {
+      filter: brightness(1.2);
+    }
+  }
+
+  .carousel-indicators {
+    display: flex;
+    gap: 8px;
+
+    .dot {
+      height: 6px;
+      width: 6px;
+      background-color: var(--secondary-color);
+      border-radius: 50%;
+
+      &.active {
+        background-color: var(--primary-color);
+      }
+    }
   }
 }
