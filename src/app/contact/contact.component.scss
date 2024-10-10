@@ -1,0 +1,15 @@
+.contact-container {
+  padding: 96px 64px;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  align-items: flex-start;
+
+  .contact-left, .contact-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
