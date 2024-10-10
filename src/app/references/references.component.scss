@@ -58,7 +58,7 @@
     align-items: center;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     width: 100%;
-    padding: 32px 0;
+    padding: 40px 0;
     opacity: 1;
   }
 
@@ -69,14 +69,23 @@
     border: 1px solid var(--primary-color);
     background-color: var(--background-color-green);
     border-radius: 30px;
-    padding: 24px;
+    padding: 24px 24px 20px 24px;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     opacity: 0.3;
     line-height: 18px;
+    position: relative;
 
     &.active {
       opacity: 1;
       transform: scale(1.2) translateX(0);
+    }
+
+    .quotes {
+      position: absolute;
+      top: -16px; /* Anpassung, damit es halb über der Ecke sitzt */
+      left: -26px;
+      width: 50px; /* Passe die Größe nach Bedarf an */
+      height: auto;
     }
 
     &.left {
@@ -96,17 +105,17 @@
       align-items: start;
       height: 100%;
 
-      .reference-author{
+      .reference-author {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
 
         .line {
-            height: 1px;
-            width: 100%;
-            margin-right: 12px;
-            background-color: var(--secondary-color);
+          height: 1px;
+          width: 100%;
+          margin-right: 12px;
+          background-color: var(--secondary-color);
         }
       }
     }

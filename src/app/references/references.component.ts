@@ -18,17 +18,17 @@ export class ReferencesComponent {
       status: 'Team-Partner',
     },
     {
-      text: 'This is an amazing colleague who helped me a lot.',
+      text: 'Philipp played a key role in the success of our project with his dedication and ability to manage all tasks effectively. His expertise in CSS, JavaScript, and HTML, along with his valuable input, enriched the team. His friendly and motivating nature also helped maintain high team morale.',
       name: 'Heiko Nickel',
       status: 'Team-Partner',
     },
     {
-      text: 'Philipp is a great team player and always delivers on time.',
+      text: 'Philipp proved to be a highly competent and dedicated colleague in programming. His quick understanding and creative problem-solving were impressive. Always helpful, he provided focused support on challenging tasks. His commitment ensured our projects were completed successfully and on time, making his solution-oriented approach and team spirit invaluable.',
       name: 'Marvin Dresp',
       status: 'Team-Partner',
     },
     {
-      text: 'Philipp has excellent skills and is a strong communicator.',
+      text: 'Philipp was a natural leader who fostered a positive, collaborative environment. He assigned tasks based on team strengths and often tackled the toughest challenges himself. His ability to find practical solutions to complex problems and his attention to detail not only improved project quality but also inspired the team to excel.',
       name: 'Fabion Latifi',
       status: 'Team-Partner',
     },
@@ -38,7 +38,7 @@ export class ReferencesComponent {
     (window as any).references = this.references;
   }
 
-  currentIndex = 0;
+  currentIndex = 1;
   animate = false;
   isAnimatingPrev = false;
   isAnimatingNext = false;
