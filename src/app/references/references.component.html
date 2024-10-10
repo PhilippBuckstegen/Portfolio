@@ -1,28 +1,39 @@
 <section class="references-container">
   <div class="references-content">
-    <h2 class="fontFiraCode-700 pri-col">What my colleagues say about me</h2>
+    <h2 class="fontFiraCode-700 pri-col fs-32">What my colleagues say about me</h2>
     <div class="references-carousel">
-      <div class="carousel-track">
-        @for (reference of references; track $index) { @if (isVisible($index)) {
+      <div
+        class="carousel-track"
+        [ngClass]="{
+          animate: animate,
+          'animate-prev': isAnimatingPrev,
+          'animate-next': isAnimatingNext
+        }"
+      >
+        @for (reference of getVisibleReferences(); track $index) {
         <div
           class="reference-container"
           [ngClass]="{
-            active: $index === currentIndex,
-            left: $index === getLeftIndex(),
-            right: $index === getRightIndex()
+            active: $index === 1,
+            left: $index === 0,
+            right: $index === 2
           }"
         >
-          <p>{{ reference.text }}</p>
-          <h4>{{ reference.name }}</h4>
-          <span>{{ reference.status }}</span>
+          <div class="reference-content">
+            <p class="fontKarla fs-14 sec-col">{{ reference.text }}</p>
+            <div class="reference-author">
+              <div class="line"></div>
+              <p class="fontKarla fs-12 sec-col no-wrap">{{ reference.name }} - {{ reference.status }}</p>
+            </div>
+          </div>
         </div>
-        } }
+        }
       </div>
     </div>
 
     <div class="carousel-controls">
       <img
-        src="/assets/icons/arrow_left.svg"
+        src="/assets/icons/arrow_back_white.svg"
         alt="Previous"
         class="carousel-arrow left-arrow"
         (click)="prevReference()"
@@ -36,7 +47,7 @@
         }
       </div>
       <img
-        src="/assets/icons/arrow_right.svg"
+        src="/assets/icons/arrow_forward_white.svg"
         alt="Next"
         class="carousel-arrow right-arrow"
         (click)="nextReference()"

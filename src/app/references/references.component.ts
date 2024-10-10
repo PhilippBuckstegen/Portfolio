@@ -13,19 +13,19 @@ import { Reference } from '../models/reference-list-interface';
 export class ReferencesComponent {
   references: Reference[] = [
     {
-      text: 'Test, dies ist eine gute Referenz',
+      text: 'Philipp is an extremely reliable and friendly team colleague. He always comes up with great ideas and contributes significantly to the success of our team. His positive attitude and creativity are a real asset to us all.',
       name: 'Lyonel Berzen',
       status: 'Team-Partner',
     },
     {
       text: 'This is an amazing colleague who helped me a lot.',
       name: 'Heiko Nickel',
-      status: 'Frontend Developer',
+      status: 'Team-Partner',
     },
     {
       text: 'Philipp is a great team player and always delivers on time.',
       name: 'Marvin Dresp',
-      status: 'Project Manager',
+      status: 'Team-Partner',
     },
     {
       text: 'Philipp has excellent skills and is a strong communicator.',
@@ -34,32 +34,52 @@ export class ReferencesComponent {
     },
   ];
 
-  currentIndex = 1;
+  constructor() {
+    (window as any).references = this.references;
+  }
+
+  currentIndex = 0;
+  animate = false;
+  isAnimatingPrev = false;
+  isAnimatingNext = false;
+
+  getVisibleReferences() {
+    return [
+      this.references[this.getLeftIndex()],
+      this.references[this.currentIndex],
+      this.references[this.getRightIndex()],
+    ];
+  }
 
   nextReference() {
-    this.currentIndex = (this.currentIndex + 1) % this.references.length;
+    this.animate = true;
+    this.isAnimatingNext = true;
+    setTimeout(() => {
+      this.isAnimatingNext = false;
+      this.currentIndex = (this.currentIndex + 1) % this.references.length;
+      this.animate = false;
+    }, 200);
   }
 
   prevReference() {
-    this.currentIndex =
-      (this.currentIndex - 1 + this.references.length) % this.references.length;
+    this.animate = true;
+    this.isAnimatingPrev = true;
+    setTimeout(() => {
+      this.isAnimatingPrev = false;
+      this.currentIndex =
+        (this.currentIndex - 1 + this.references.length) %
+        this.references.length;
+      this.animate = false;
+    }, 200);
   }
 
-  getLeftIndex(): number {
+  getLeftIndex() {
     return (
       (this.currentIndex - 1 + this.references.length) % this.references.length
     );
   }
 
-  getRightIndex(): number {
+  getRightIndex() {
     return (this.currentIndex + 1) % this.references.length;
-  }
-
-  isVisible(index: number): boolean {
-    return (
-      index === this.currentIndex ||
-      index === this.getLeftIndex() ||
-      index === this.getRightIndex()
-    );
   }
 }
