@@ -1,46 +1,48 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
   contactForm: FormGroup;
+  formSubmitted = false;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
+      email: [
+        '',
+        [
+          Validators.required,
+          Validators.email,
+          Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}'),
+        ],
+      ],
+      message: ['', [Validators.required, Validators.minLength(4)]],
       privacyPolicy: [false, Validators.requiredTrue],
     });
   }
 
-  async onSubmit() {
+  onSubmit() {
     if (this.contactForm.valid) {
       const formData = this.contactForm.value;
-      try {
-        const response = await this.http
-          .post('https://formspree.io/YOUR_FORM_ID', formData)
-          .pipe(
-            catchError((error) => {
-              console.error('Error submitting form', error);
-              return throwError(error);
-            })
-          )
-          .toPromise();
-        console.log('Form submitted successfully', response);
-      } catch (error) {
-        console.error('Submission failed', error);
-      }
+
+      this.http.post('your-backend-endpoint.php', formData).subscribe({
+        next: () => {
+          this.formSubmitted = true;
+          console.log('Form submitted successfully.');
+        },
+        error: (error) => {
+          console.error('Error submitting form:', error);
+        },
+      });
     }
   }
 }

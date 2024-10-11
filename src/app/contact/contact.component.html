@@ -4,65 +4,90 @@
     <div class="contact-form">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label for="name">Name:</label>
+          <label class="fontFiraCode pri-col fs-24" for="name">What's your name?</label>
           <input
+            class="mt-8"
             type="text"
             id="name"
             formControlName="name"
-            placeholder="Your Name"
+            placeholder="Your name goes here"
             required
           />
-          @if (contactForm.get('name')?.invalid &&
-          contactForm.get('name')?.touched) {
-          <small class="error">Name is required</small>
+          @if (contactForm.controls['name'].invalid &&
+          contactForm.controls['name'].touched) {
+          <span class="error-message fontKarla fs-12"
+            >Please enter your name</span
+          >
           }
         </div>
 
         <div class="form-group">
-          <label for="email">Email:</label>
+          <label class="fontFiraCode pri-col fs-24" for="email">What's your email?</label>
           <input
+            class="mt-8"
             type="email"
             id="email"
             formControlName="email"
-            placeholder="Your Email"
+            placeholder="youremail@email.com"
             required
           />
-          @if (contactForm.get('email')?.invalid &&
-          contactForm.get('email')?.touched) {
-          <small class="error">Please enter a valid email address</small>
+          @if (contactForm.controls['email'].invalid &&
+          contactForm.controls['email'].touched) {
+          <span class="error-message fontKarla fs-12"
+            >Please enter a valid email address</span
+          >
           }
         </div>
 
         <div class="form-group">
-          <label for="message">Message:</label>
+          <label class="fontFiraCode pri-col fs-24" for="message">How can I help you?</label>
           <textarea
+            class="mt-8 fontKarla"
             id="message"
             formControlName="message"
             rows="5"
-            placeholder="Your Message"
+            placeholder="Hello Philipp, I am interested in..."
             required
+            minlength="4"
           ></textarea>
-          @if (contactForm.get('message')?.invalid &&
-          contactForm.get('message')?.touched) {
-          <small class="error">Message is required</small>
+          @if (contactForm.controls['message'].invalid &&
+          contactForm.controls['message'].touched) {
+          <span class="error-message fontKarla fs-12"
+            >Your message must be at least 4 characters long</span
+          >
           }
         </div>
 
         <div class="form-group">
-          <label>
-            <input type="checkbox" formControlName="privacyPolicy" required /> I
-            agree to the Privacy Policy
+          <label class="checkbox fontKarla sec-col fs-12">
+            <input type="checkbox" formControlName="privacyPolicy" required />
+            I agree to the Privacy Policy
           </label>
-          @if (contactForm.get('privacyPolicy')?.invalid &&
-          contactForm.get('privacyPolicy')?.touched) {
-          <small class="error">You must agree to the privacy policy</small>
+          @if (contactForm.controls['privacyPolicy'].invalid &&
+          contactForm.controls['privacyPolicy'].touched) {
+          <span class="error-message fontKarla fs-12"
+            >You must agree to the Privacy Policy</span
+          >
           }
         </div>
 
-        <button type="submit" class="btn" [disabled]="contactForm.invalid">
-          Submit
-        </button>
+        <div class="say-hello-btn">
+          <button
+            id="sayHelloBtn"
+            type="submit"
+            class="btn fontKarla"
+            [disabled]="contactForm.invalid"
+          >
+            Say Hello
+          </button>
+        </div>
       </form>
+
+      @if (formSubmitted) {
+      <p class="success-message">
+        Thank you! Your message has been sent successfully.
+      </p>
+      }
     </div>
   </div>
 </section>

@@ -122,6 +122,9 @@ html {
   color: var(--primary-color);
 }
 
+.mt-8 {
+  margin-top: 8px;
+}
 .mb-20 {
   margin-bottom: 20px;
 }
@@ -132,12 +135,6 @@ html {
 
 .no-wrap {
   white-space: nowrap;
-}
-
-.main-btn {
-}
-
-.secondary-btn {
 }
 
 :root {
@@ -169,6 +166,11 @@ html {
     img {
       transform: translate(2px, -2px);
       transition: transform 0.3s ease-in-out;
+    }
+    &:disabled {
+      border: 1px solid grey;
+      color: grey;
+      cursor: default;
     }
   }
 
