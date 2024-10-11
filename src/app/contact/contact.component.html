@@ -42,7 +42,7 @@
         <div class="form-group">
           <label class="fontFiraCode pri-col fs-24" for="message">How can I help you?</label>
           <textarea
-            class="mt-8 fontKarla"
+            class="mt-8"
             id="message"
             formControlName="message"
             rows="5"
@@ -80,14 +80,16 @@
           >
             Say Hello
           </button>
+          @if (contactForm.invalid) {
+            <div class="validation-overlay" (click)="triggerValidation()"></div>
+          }
         </div>
+        @if (formSubmitted) {
+            <p class="success-message fontKarla fs-14 sec-col">
+              Thank you! Your message has been sent successfully.
+            </p>
+        }
       </form>
-
-      @if (formSubmitted) {
-      <p class="success-message">
-        Thank you! Your message has been sent successfully.
-      </p>
-      }
     </div>
   </div>
 </section>

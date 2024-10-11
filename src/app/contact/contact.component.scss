@@ -35,6 +35,11 @@
 
       .error-message {
         color: red;
+        margin-left: 4px;
+      }
+
+      .success-message {
+
       }
     }
 
@@ -42,6 +47,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      position: relative;
+
+      .validation-overlay {
+        position: absolute;
+        top: 0;
+        left: 40%;
+        width: 122px;
+        height: 100%;
+        background-color: transparent;
+        cursor: default;
+        z-index: 1;
+      }
     }
   }
 

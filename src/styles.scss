@@ -167,11 +167,11 @@ html {
       transform: translate(2px, -2px);
       transition: transform 0.3s ease-in-out;
     }
-    &:disabled {
-      border: 1px solid grey;
-      color: grey;
-      cursor: default;
-    }
+  }
+  &:disabled {
+    border: 1px solid grey;
+    color: grey;
+    cursor: default;
   }
 
   img {
