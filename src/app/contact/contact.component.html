@@ -1,74 +1,97 @@
 <section class="contact-container">
-  <div class="contact-left"></div>
+  <div class="contact-left">
+    <div class="mb-20">
+      <p class="fontKarla-700 info-heading">Contact me</p>
+      <h1 class="info-title fontFiraCode-700">Let's work together</h1>
+      <p class="fontFiraCode-700 pri-col fs-24 mb-20">
+        Got a problem to solve?
+      </p>
+      <p class="fontKarla fs-18 sec-col mb-20">
+        Contact me through this form, I am interested in hearing from you,
+        knowing your ideas and contributing to your projects with my work.
+      </p>
+      <p class="fontKarla fs-18 sec-col mb-20">
+        Need a Frontend developer?
+        <span class="fontKarla-700 pri-col">Let’s talk!</span>
+      </p>
+    </div>
+  </div>
   <div class="contact-right">
     <div class="contact-form">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label class="fontFiraCode pri-col fs-24" for="name">What's your name?</label>
+          <label class="fontFiraCode pri-col fs-24" for="name"
+            >What's your name?</label
+          >
           <input
-            class="mt-8"
+            class="mt-4"
             type="text"
             id="name"
             formControlName="name"
-            placeholder="Your name goes here"
+            [placeholder]="
+              contactForm.controls['name'].invalid &&
+              contactForm.controls['name'].touched
+                ? 'Please enter your name'
+                : 'Your name goes here'
+            "
             required
           />
-          @if (contactForm.controls['name'].invalid &&
-          contactForm.controls['name'].touched) {
-          <span class="error-message fontKarla fs-12"
-            >Please enter your name</span
-          >
-          }
         </div>
 
         <div class="form-group">
-          <label class="fontFiraCode pri-col fs-24" for="email">What's your email?</label>
+          <label class="fontFiraCode pri-col fs-24" for="email"
+            >What's your email?</label
+          >
           <input
-            class="mt-8"
+            class="mt-4"
             type="email"
             id="email"
             formControlName="email"
-            placeholder="youremail@email.com"
+            [placeholder]="
+              contactForm.controls['email'].invalid &&
+              contactForm.controls['email'].touched
+                ? 'Please enter a valid email address'
+                : 'youremail@email.com'
+            "
             required
           />
-          @if (contactForm.controls['email'].invalid &&
-          contactForm.controls['email'].touched) {
-          <span class="error-message fontKarla fs-12"
-            >Please enter a valid email address</span
-          >
-          }
         </div>
 
         <div class="form-group">
-          <label class="fontFiraCode pri-col fs-24" for="message">How can I help you?</label>
+          <label class="fontFiraCode pri-col fs-24" for="message"
+            >How can I help you?</label
+          >
           <textarea
-            class="mt-8"
+            class="mt-4"
             id="message"
             formControlName="message"
             rows="5"
-            placeholder="Hello Philipp, I am interested in..."
+            [placeholder]="
+              contactForm.controls['message'].invalid &&
+              contactForm.controls['message'].touched
+                ? 'Your message must be at least 4 characters long'
+                : 'Hello Philipp, I am interested in...'
+            "
             required
             minlength="4"
           ></textarea>
-          @if (contactForm.controls['message'].invalid &&
-          contactForm.controls['message'].touched) {
-          <span class="error-message fontKarla fs-12"
-            >Your message must be at least 4 characters long</span
-          >
-          }
         </div>
 
         <div class="form-group">
-          <label class="checkbox fontKarla sec-col fs-12">
+          <label class="checkbox fontKarla sec-col fs-12 mt-4">
             <input type="checkbox" formControlName="privacyPolicy" required />
             I agree to the Privacy Policy
           </label>
-          @if (contactForm.controls['privacyPolicy'].invalid &&
-          contactForm.controls['privacyPolicy'].touched) {
-          <span class="error-message fontKarla fs-12"
-            >You must agree to the Privacy Policy</span
+          <span
+            class="error-message fontKarla fs-12"
+            [ngClass]="{
+              visible:
+                contactForm.controls['privacyPolicy'].invalid &&
+                contactForm.controls['privacyPolicy'].touched
+            }"
           >
-          }
+            You must agree to the Privacy Policy
+          </span>
         </div>
 
         <div class="say-hello-btn">
@@ -81,13 +104,14 @@
             Say Hello
           </button>
           @if (contactForm.invalid) {
-            <div class="validation-overlay" (click)="triggerValidation()"></div>
+          <div class="validation-overlay" (click)="triggerValidation()"></div>
           }
         </div>
+
         @if (formSubmitted) {
-            <p class="success-message fontKarla fs-14 sec-col">
-              Thank you! Your message has been sent successfully.
-            </p>
+        <p class="success-message fontKarla fs-14 sec-col">
+          Thank you! Your message has been sent successfully.
+        </p>
         }
       </form>
     </div>

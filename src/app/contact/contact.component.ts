@@ -44,6 +44,8 @@ export class ContactComponent {
         next: () => {
           this.formSubmitted = true;
           console.log('Form submitted successfully.');
+          this.contactForm.reset();
+          this.contactForm.markAsUntouched();
         },
         error: (error) => {
           console.error('Error submitting form:', error);

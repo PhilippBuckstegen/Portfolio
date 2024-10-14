@@ -3,7 +3,7 @@
   background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
-  gap: 32px;
+  gap: 48px;
   align-items: flex-start;
 
   .contact-left,
@@ -14,6 +14,20 @@
     align-items: flex-start;
     width: 50%;
 
+    .info-heading {
+      font-size: 24px;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+
+    .info-title {
+      font-size: 64px;
+      line-height: 64px;
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+      color: var(--primary-color);
+    }
+
     .contact-form {
       width: 100%;
     }
@@ -23,23 +37,29 @@
       flex-direction: column;
       align-items: flex-start;
       border-top: 1px solid var(--primary-color);
-      padding: 24px;
+      padding: 20px;
 
       .checkbox {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        margin-left: -24px;
+        margin-left: -20px;
         gap: 16px;
+        position: relative;
       }
 
       .error-message {
+        visibility: hidden;
         color: red;
-        margin-left: 4px;
+        opacity: 0.7;
+        margin-left: 10px;
+        display: block;
+        &.visible {
+          visibility: visible;
+        }
       }
 
       .success-message {
-
       }
     }
 
@@ -75,12 +95,27 @@
     height: 18px;
     font-size: 16px;
     padding: 4px;
-    color: var(--secondary-color); /* Passe die Schriftfarbe an */
-    resize: none; /* Deaktiviert die Möglichkeit, die Textarea zu vergrößern */
-
+    color: var(--secondary-color);
+    resize: none;
+    overflow-y: scroll;
+    scrollbar-width: none;
     &::placeholder {
-      color: var(--secondary-color); /* Farbe für den Platzhalter */
-      opacity: 0.7; /* Transparenz des Platzhalters */
+      color: var(--secondary-color);
+      opacity: 0.7;
+    }
+    &:invalid {
+      &::placeholder {
+        color: var(--secondary-color);
+      }
+    }
+    &:invalid:focus,
+    &:invalid.ng-touched {
+      &::placeholder {
+        color: red;
+      }
+    }
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
