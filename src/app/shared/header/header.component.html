@@ -2,9 +2,9 @@
     <div class="header-content">
         <div class="menu">
             <img class="img-lang" src="./assets/img/default_lang.svg" alt="lang-btn">
-            <span class="fontFiraCode" routerLink="/" fragment="about">About me</span>
-            <span class="fontFiraCode">Skills</span>
-            <span class="fontFiraCode">Projects</span>
+            <span class="fontFiraCode" (click)="scrollToSection('about')">About me</span>
+            <span class="fontFiraCode" (click)="scrollToSection('skills')">Skills</span>
+            <span class="fontFiraCode" (click)="scrollToSection('projects')">Projects</span>
         </div>
         <div class="logo">
             <img src="" alt="logo">
