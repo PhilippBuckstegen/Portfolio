@@ -1,0 +1,26 @@
+.legal-notice {
+  padding: 120px 64px 0 64px;
+  background-color: var(--background-color);
+
+  .legal-notice-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    .impressum {
+      & p {
+        color: var(--secondary-color);
+        font-family: "Karla";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        margin-top: 12px;
+      }
+      & a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './shared/header/header.component';
-import { HeroSectionComponent } from './hero-section/hero-section.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { SkillsComponent } from './skills/skills.component';
-import { ProjectsComponent } from './projects/projects.component';
-import { ReferencesComponent } from './references/references.component';
-import { ContactComponent } from './contact/contact.component';
+import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
@@ -15,14 +10,9 @@ import { FooterComponent } from './shared/footer/footer.component';
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
+    FormsModule,
     HeaderComponent,
-    HeroSectionComponent,
-    AboutMeComponent,
-    SkillsComponent,
-    ProjectsComponent,
-    ReferencesComponent,
-    ContactComponent,
+    RouterOutlet,
     FooterComponent,
   ],
   templateUrl: './app.component.html',
