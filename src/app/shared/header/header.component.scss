@@ -19,7 +19,7 @@
   > span {
     font-size: 20px;
     color: var(--secondary-color);
-    transition: color 0.3s ease-in-out;;
+    transition: color 0.3s ease-in-out;
     &:hover {
       cursor: pointer;
       color: var(--primary-color);
@@ -30,6 +30,108 @@
 .img-lang {
   cursor: pointer;
   &:hover {
-    content: url('../../../assets/img/default_hover.svg');
+    content: url("../../../assets/img/default_hover.svg");
+  }
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+
+  .line {
+    width: 30px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .close-icon {
+    font-size: 30px;
+    line-height: 21px;
+    color: var(--secondary-color);
+    z-index: 9;
+    transition: color 0.3s ease-in-out;
+    position: fixed;
+    top: 48px;
+    right: 48px;
+  }
+  &:hover .close-icon {
+    color: var(--primary-color);
+  }
+  &:hover .line {
+    background-color: var(--primary-color);
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 96px;
+  right: -4px;
+  width: 0;
+  height: auto;
+  z-index: 10;
+  transition: width 0.25s ease;
+  overflow: hidden;
+  background: url("/assets/img/Hero_Background.png") no-repeat center center;
+  background-size: cover;
+  border: 1px solid var(--primary-color);
+  border-radius: 30px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+
+  &.active {
+    width: 160px;
+    height: auto;
+    top: 96px;
+    right: 48px;
+  }
+
+  .overlay-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px;
+    list-style: none;
+    align-items: center;
+
+    li {
+      color: var(--secondary-color);
+      font-family: "Fira Code";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      cursor: pointer;
+      transition: color 0.3s ease-in-out;
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 8;
+  transition: background-color 0.25s ease-in-out;
+  pointer-events: none;
+  &.active {
+    background-color: #00000099;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .burger-menu {
+    display: flex;
   }
 }

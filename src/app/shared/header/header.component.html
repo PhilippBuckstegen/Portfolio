@@ -1,13 +1,42 @@
 <header class="header">
-    <div class="header-content">
-        <div class="menu">
-            <img class="img-lang" src="./assets/img/default_lang.svg" alt="lang-btn">
-            <span class="fontFiraCode" (click)="navigateAndScroll('about')">About me</span>
-            <span class="fontFiraCode" (click)="navigateAndScroll('skills')">Skills</span>
-            <span class="fontFiraCode" (click)="navigateAndScroll('projects')">Projects</span>
-        </div>
-        <div class="logo">
-            <img src="" alt="logo">
-        </div>
+  <div class="header-content">
+    <div class="menu">
+      <img
+        class="img-lang"
+        src="./assets/img/default_lang.svg"
+        alt="lang-btn"
+      />
+      <span class="fontFiraCode" (click)="navigateAndScroll('about')"
+        >About me</span
+      >
+      <span class="fontFiraCode" (click)="navigateAndScroll('skills')"
+        >Skills</span
+      >
+      <span class="fontFiraCode" (click)="navigateAndScroll('projects')"
+        >Projects</span
+      >
     </div>
+    <div class="logo">
+      <img src="" alt="logo" />
+    </div>
+    <div class="burger-menu" (click)="toggleMenu()">
+      @if (!isMenuOpen) {
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      } @if (isMenuOpen) {
+      <div class="close-icon">
+        <span>&#10005;</span>
+      </div>
+      }
+    </div>
+  </div>
+  <div class="dark-overlay" [ngClass]="{ active: isMenuOpen }"></div>
+  <div class="overlay" [ngClass]="{ active: isMenuOpen }">
+    <ul class="overlay-menu">
+      <li (click)="navigateAndScroll('about')">About me</li>
+      <li (click)="navigateAndScroll('skills')">Skills</li>
+      <li (click)="navigateAndScroll('projects')">Projects</li>
+    </ul>
+  </div>
 </header>
