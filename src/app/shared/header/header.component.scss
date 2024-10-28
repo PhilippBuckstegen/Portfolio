@@ -29,8 +29,11 @@
 
 .img-lang {
   cursor: pointer;
-  &:hover {
+  &.default-img:hover {
     content: url("../../../assets/img/default_hover.svg");
+  }
+  &.alt-img:hover {
+    content: url("../../../assets/img/german_hover.svg");
   }
 }
 

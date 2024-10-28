@@ -3,7 +3,12 @@
     <div class="menu">
       <img
         class="img-lang"
-        src="./assets/img/default_lang.svg"
+        [ngClass]="{
+          'default-img': isDefaultImage,
+          'alt-img': !isDefaultImage
+        }"
+        [src]="imgSrc"
+        (click)="toggleImage()"
         alt="lang-btn"
       />
       <span class="fontFiraCode" (click)="navigateAndScroll('about')"
