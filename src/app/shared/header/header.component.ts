@@ -30,7 +30,9 @@ export class HeaderComponent {
         this.scrollToSection(section);
       });
     }
-    this.toggleMenu();
+    if (this.isMenuOpen) {
+      this.toggleMenu();
+    }
   }
 
   toggleMenu() {
