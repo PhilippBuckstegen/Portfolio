@@ -1,7 +1,38 @@
 {
   "header": {
     "about": "Über mich",
-    "skills": "Kompetenzen",
+    "skills": "Skills",
     "projects": "Projekte"
+  },
+  "hero": {
+    "btn-projects": "Meine Projekte",
+    "btn-contact": "Kontaktiere mich",
+    "ticker": "Remote verfügbar · Frontend-Entwickler · Ansässig im Ruhrgebiet · Offen für neue Projekte ·"
+  },
+  "about": {
+    "title": "Über mich",
+    "heading": "Wer ich bin",
+    "intro": "Hallo, ich bin ein deutschsprachiger Frontend-Entwickler aus Essen. Begeistert von den grenzenlosen Möglichkeiten in der IT freue ich mich darauf, visuell ansprechende und intuitive Websites und Anwendungen zu gestalten.",
+    "details": {
+      "location": "Flexibel in Bezug auf Arbeitsumgebungen kann ich sowohl vor Ort in Essen als auch remote effektiv arbeiten.",
+      "mindset": "Ich bin offen für neue Herausforderungen und stets bestrebt, mein Wissen und meine Fähigkeiten kontinuierlich zu verbessern.",
+      "passion": "In meinem Beruf geht es beim Programmieren nicht nur darum, Code zu schreiben; es ist eine kreative Form der Problemlösung. Ich bin stolz darauf, komplexe technische Herausforderungen in einfache, benutzerfreundliche Lösungen zu überführen. So helfe ich Ihnen, Ihre Ziele zu erreichen und Ihre Visionen zu verwirklichen."
+    }
+  },
+  "skills": {
+    "title": "Skill Set",
+    "heading": "Technologien",
+    "intro": "Mein Weg hat mich durch verschiedene Projekte geführt, bei denen ich ein breites Spektrum an Frontend-Technologien und Konzepten eingesetzt habe. Ich bin offen für neue Technologien und Methoden, um meine Kompetenzen kontinuierlich zu verbessern und in der sich ständig weiterentwickelnden Welt der Webentwicklung Schritt zu halten.",
+    "anotherSkill": {
+      "question": "Benötigst du eine",
+      "question1": "andere Kompetenz?",
+      "contactMessage": "Kontaktiere mich gerne. Ich freue mich darauf, mein bisheriges Wissen zu erweitern.",
+      "button": "Lass uns reden"
+    }
+  },
+  "projects": {
+    "portfolio": "Portfolio",
+    "featuredTitle": "Meine Projekte",
+    "description": "Entdecke hier eine Auswahl meiner Arbeiten – Interagiere mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen."
   }
 }

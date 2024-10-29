@@ -3,20 +3,14 @@
     <p class="fontFiraCode">Frontend Developer</p>
     <h1 class="fontKarla-700">Philipp Buckstegen</h1>
     <div class="hero-btn">
-      <button class="btn fontKarla" (click)="navigateAndScroll('projects')">Check my work</button>
-      <button class="btn fontKarla" (click)="navigateAndScroll('contact')">Contact me</button>
+      <button class="btn fontKarla" (click)="navigateAndScroll('projects')">{{ 'hero.btn-projects' | translate }}</button>
+      <button class="btn fontKarla" (click)="navigateAndScroll('contact')">{{ 'hero.btn-contact' | translate }}</button>
     </div>
   </div>
   <div class="ticker">
     <div class="ticker-content">
-      <span class="fontKarla"
-        >·  Available for remote work  ·  Frontend Developer  ·  Based in NRW
-         ·  Open to work  · </span
-      >
-      <span class="fontKarla"
-        > Available for remote work  ·  Frontend Developer  ·  Based in NRW  · 
-        Open to work</span
-      >
+      <span class="fontKarla">{{ 'hero.ticker' | translate }}</span>
+      <span class="fontKarla">&nbsp;{{ 'hero.ticker' | translate }}</span>
     </div>
   </div>
   <div class="circle-container">

@@ -5,13 +5,15 @@
   </div>
 
   <div class="info-container">
-    <h3 class="info-heading fontKarla-700">Who I Am</h3>
+    <h3 class="info-heading fontKarla-700">
+      {{ "about.heading" | translate }}
+    </h3>
     <div class="info-box-container">
-      <h1 class="info-title fontFiraCode-700">About me</h1>
+      <h1 class="info-title fontFiraCode-700">
+        {{ "about.title" | translate }}
+      </h1>
       <p class="info-paragraph fontKarla">
-        Hi, I’m a german speaking Frontend Developer based in Munich. Motivated
-        by the limitless opportunities within IT, I am excited about crafting
-        visually captivating and intuitive websites and applications.
+        {{ "about.intro" | translate }}
       </p>
       <div class="details-container">
         <div class="detail-item">
@@ -21,8 +23,7 @@
             class="detail-image"
           />
           <p class="detail-text fontKarla">
-            Flexible in terms of working environments, I can work effectively
-            both on-site in Essen and remotely.
+            {{ "about.details.location" | translate }}
           </p>
         </div>
         <div class="detail-item">
@@ -32,8 +33,7 @@
             class="detail-image"
           />
           <p class="detail-text fontKarla">
-            I am open-minded and always looking for personal challenges to
-            constantly improve my knowledge and skills.
+            {{ "about.details.mindset" | translate }}
           </p>
         </div>
         <div class="detail-item">
@@ -43,11 +43,7 @@
             class="detail-image"
           />
           <p class="detail-text fontKarla">
-            In my profession, programming isn't just about writing code; it's a
-            creative form of problem-solving. I take pride in my ability to
-            distill complex technical challenges into simple, user-friendly
-            solutions. This way, I help you achieve your goals and bring your
-            visions to life.
+            {{ "about.details.passion" | translate }}
           </p>
         </div>
       </div>

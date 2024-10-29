@@ -1,23 +1,26 @@
 <section class="skill-set-container" id="skills">
   <div class="info-container">
-    <h3 class="info-heading fontKarla-700">Technologies</h3>
+    <h3 class="info-heading fontKarla-700">
+      {{ "skills.heading" | translate }}
+    </h3>
     <div class="info-box-container">
-      <h1 class="info-title fontFiraCode-700">Skill Set</h1>
-      <p class="info-paragraph fontKarla">
-        My journey has involved working on diverse projects, employing a range
-        of frontend technologies and concepts. I am open to embracing new
-        technologies and methodologies to Continously enhance my skills and stay
-        ahead in the ever-evolving landscape of web development.
-      </p>
+      <h1 class="info-title fontFiraCode-700">
+        {{ "skills.title" | translate }}
+      </h1>
+      <p class="info-paragraph fontKarla">{{ "skills.intro" | translate }}</p>
       <div class="another-skill">
         <p class="detail-text fontFiraCode-700">
-          You need <span>another skill?</span>
+          {{ "skills.anotherSkill.question" | translate }}
+          <span class="pri-col">
+          {{ "skills.anotherSkill.question1" | translate }}
+          </span>
         </p>
         <p class="info-paragraph fontKarla">
-          Feel free to contact me. I look forward to expanding on my previous
-          knowledge.
+          {{ "skills.anotherSkill.contactMessage" | translate }}
         </p>
-        <button class="btn fontKarla" (click)="navigateAndScroll('contact')">Let’s Talk</button>
+        <button class="btn fontKarla" (click)="navigateAndScroll('contact')">
+          {{ "skills.anotherSkill.button" | translate }}
+        </button>
       </div>
     </div>
   </div>

@@ -13,7 +13,7 @@ import { FooterComponent } from './shared/footer/footer.component';
     FormsModule,
     HeaderComponent,
     RouterOutlet,
-    FooterComponent,
+    FooterComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -21,6 +21,5 @@ import { FooterComponent } from './shared/footer/footer.component';
 export class AppComponent {
   title = 'Philipp Buckstegen';
 
-  
-
+  constructor() {}
 }
