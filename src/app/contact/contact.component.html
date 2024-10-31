@@ -1,6 +1,6 @@
 <section class="contact-container" id="contact">
   <div class="contact-left">
-    <div class="mb-20">
+    <div class="mb-20 content-left">
       <p class="fontKarla-700 info-heading">
         {{ "contact.title" | translate }}
       </p>
@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="contact-right">
-    <div class="contact-form">
+    <div class="contact-form contact-right">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label class="fontFiraCode pri-col fs-24" for="name">{{

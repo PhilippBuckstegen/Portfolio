@@ -11,17 +11,17 @@
         (click)="toggleImage()"
         alt="lang-btn"
       />
-      <span class="fontFiraCode" (click)="navigateAndScroll('about')"
-        >{{ 'header.about' | translate }}</span
-      >
-      <span class="fontFiraCode" (click)="navigateAndScroll('skills')"
-        >{{ 'header.skills' | translate }}</span
-      >
-      <span class="fontFiraCode" (click)="navigateAndScroll('projects')"
-        >{{ 'header.projects' | translate }}</span
-      >
+      <span class="fontFiraCode" (click)="navigateAndScroll('about')">{{
+        "header.about" | translate
+      }}</span>
+      <span class="fontFiraCode" (click)="navigateAndScroll('skills')">{{
+        "header.skills" | translate
+      }}</span>
+      <span class="fontFiraCode" (click)="navigateAndScroll('projects')">{{
+        "header.projects" | translate
+      }}</span>
     </div>
-    <div class="logo">
+    <div (click)="navigateAndScroll('hero')" class="logo">
       <img src="" alt="logo" />
     </div>
     <div class="burger-menu" (click)="toggleMenu()">
@@ -39,9 +39,25 @@
   <div class="dark-overlay" [ngClass]="{ active: isMenuOpen }"></div>
   <div class="overlay" [ngClass]="{ active: isMenuOpen }">
     <ul class="overlay-menu">
-      <li (click)="navigateAndScroll('about')">About me</li>
-      <li (click)="navigateAndScroll('skills')">Skills</li>
-      <li (click)="navigateAndScroll('projects')">Projects</li>
+      <li (click)="navigateAndScroll('about')">
+        {{ "header.about" | translate }}
+      </li>
+      <li (click)="navigateAndScroll('skills')">
+        {{ "header.skills" | translate }}
+      </li>
+      <li (click)="navigateAndScroll('projects')">
+        {{ "header.projects" | translate }}
+      </li>
+      <img
+        class="img-lang img-lang-burger"
+        [ngClass]="{
+          'default-img': isDefaultImage,
+          'alt-img': !isDefaultImage
+        }"
+        [src]="imgSrc"
+        (click)="toggleImage()"
+        alt="lang-btn"
+      />
     </ul>
   </div>
 </header>

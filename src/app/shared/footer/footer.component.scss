@@ -11,6 +11,10 @@
     align-items: flex-end;
     width: 100%;
 
+    .logo {
+        cursor: pointer;
+    }
+
     .left,
     .right {
       display: flex;

@@ -148,12 +148,15 @@
 .mail-address {
   transform: rotate(-90deg);
   transform-origin: left top;
-  margin-right: -172px;
+  margin-right: -204px;
+  position: absolute;
+  margin-top: -16px;
 
   .email-link {
     text-decoration: none;
     color: var(--secondary-color);
     font-size: 16px;
+    transition: color 0.3s ease-in-out;
     &:hover {
       color: var(--primary-color);
     }
