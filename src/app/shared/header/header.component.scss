@@ -9,7 +9,7 @@
 .header-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   padding: 48px;
 }
 
@@ -29,6 +29,13 @@
 
 .logo {
   cursor: pointer;
+  display: flex;
+  justify-content: end;
+
+  .pb-logo {
+    width: 64px;
+    height: auto;
+  }
 }
 
 .img-lang {

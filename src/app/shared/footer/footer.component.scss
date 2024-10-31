@@ -11,8 +11,11 @@
     align-items: flex-end;
     width: 100%;
 
-    .logo {
+    .pb-logo {
         cursor: pointer;
+        width: 64px;
+        height: auto;
+        margin-bottom: 16px;
     }
 
     .left,
