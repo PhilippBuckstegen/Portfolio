@@ -86,12 +86,16 @@ export class ProjectsComponent {
   constructor(private translationService: TranslationService) {}
 
   openOverlay(project: Project) {
-    this.selectedProject = project;
+    this.selectedProject = { ...project };
     this.isOverlayOpen = true;
 
-    let translation = this.translationService.getProjectTranslation(project.id);
-    translation.title.subscribe((res) => this.selectedProject!.title = res);
-    translation.description.subscribe((res) => this.selectedProject!.description = res);
+    this.translationService
+      .getProjectDescription(project.id)
+      .subscribe((translatedDescription) => {
+        if (this.selectedProject?.id === project.id) {
+          this.selectedProject.description = translatedDescription;
+        }
+      });
   }
 
   closeOverlay() {
@@ -104,7 +108,15 @@ export class ProjectsComponent {
       (p) => p.id === this.selectedProject?.id
     );
     let nextIndex = (currentIndex + 1) % this.projects.length;
-    this.selectedProject = this.projects[nextIndex];
+    this.selectedProject = { ...this.projects[nextIndex] };
+    
+    this.translationService
+      .getProjectDescription(this.selectedProject.id)
+      .subscribe((translatedDescription) => {
+        if (this.selectedProject?.id === this.projects[nextIndex].id) {
+          this.selectedProject.description = translatedDescription;
+        }
+      });
   }
 
   getCombinedSkillsAndIcons(): { icon: string; skill: string }[] {

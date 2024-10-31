@@ -1,16 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Reference } from '../models/reference-list-interface';
+import { TranslationService } from '../translation.service';
+import { TranslateModule } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-references',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './references.component.html',
   styleUrls: ['./references.component.scss'],
 })
-export class ReferencesComponent {
+export class ReferencesComponent implements OnDestroy {
   references: Reference[] = [
     {
       text: 'Philipp is an extremely reliable and friendly team colleague. He always comes up with great ideas and contributes significantly to the success of our team. His positive attitude and creativity are a real asset to us all.',
@@ -34,14 +37,40 @@ export class ReferencesComponent {
     },
   ];
 
-  constructor() {
-    (window as any).references = this.references;
-  }
-
   currentIndex = 1;
   animate = false;
   isAnimatingPrev = false;
   isAnimatingNext = false;
+
+  private langChangeSubscription: Subscription;
+
+  constructor(private translationService: TranslationService) {
+    (window as any).references = this.references;
+    this.loadReferenceTexts();
+
+    this.langChangeSubscription = this.translationService
+      .onLanguageChange()
+      .subscribe(() => {
+        this.loadReferenceTexts();
+      });
+  }
+
+  loadReferenceTexts() {
+    this.references.forEach((reference, index) => {
+      const referenceId = index + 1;
+      this.translationService
+        .getReferenceText(referenceId)
+        .subscribe((translatedText) => {
+          reference.text = translatedText;
+        });
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
+  }
 
   getVisibleReferences() {
     return [

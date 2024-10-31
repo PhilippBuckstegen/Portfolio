@@ -1,18 +1,23 @@
 <section class="contact-container" id="contact">
   <div class="contact-left">
     <div class="mb-20">
-      <p class="fontKarla-700 info-heading">Contact me</p>
-      <h1 class="info-title fontFiraCode-700">Let's work together</h1>
+      <p class="fontKarla-700 info-heading">
+        {{ "contact.title" | translate }}
+      </p>
+      <h1 class="info-title fontFiraCode-700">
+        {{ "contact.subtitle" | translate }}
+      </h1>
       <p class="fontFiraCode-700 pri-col fs-24 mb-20">
-        Got a problem to solve?
+        {{ "contact.question" | translate }}
       </p>
       <p class="fontKarla fs-18 sec-col mb-20">
-        Contact me through this form, I am interested in hearing from you,
-        knowing your ideas and contributing to your projects with my work.
+        {{ "contact.intro" | translate }}
       </p>
       <p class="fontKarla fs-18 sec-col mb-20">
-        Need a Frontend developer?
-        <span class="fontKarla-700 pri-col">Let’s talk!</span>
+        {{ "contact.cta0" | translate }}
+        <span class="fontKarla-700 pri-col">{{
+          "contact.cta1" | translate
+        }}</span>
       </p>
     </div>
   </div>
@@ -20,9 +25,9 @@
     <div class="contact-form">
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
-          <label class="fontFiraCode pri-col fs-24" for="name"
-            >What's your name?</label
-          >
+          <label class="fontFiraCode pri-col fs-24" for="name">{{
+            "contact.form.name.label" | translate
+          }}</label>
           <input
             class="mt-4"
             type="text"
@@ -31,17 +36,17 @@
             [placeholder]="
               contactForm.controls['name'].invalid &&
               contactForm.controls['name'].touched
-                ? 'Please enter your name'
-                : 'Your name goes here'
+                ? ('contact.form.name.error' | translate)
+                : ('contact.form.name.placeholder' | translate)
             "
             required
           />
         </div>
 
         <div class="form-group">
-          <label class="fontFiraCode pri-col fs-24" for="email"
-            >What's your email?</label
-          >
+          <label class="fontFiraCode pri-col fs-24" for="email">{{
+            "contact.form.email.label" | translate
+          }}</label>
           <input
             class="mt-4"
             type="email"
@@ -50,17 +55,17 @@
             [placeholder]="
               contactForm.controls['email'].invalid &&
               contactForm.controls['email'].touched
-                ? 'Please enter a valid email address'
-                : 'youremail@email.com'
+                ? ('contact.form.email.error' | translate)
+                : ('contact.form.email.placeholder' | translate)
             "
             required
           />
         </div>
 
         <div class="form-group">
-          <label class="fontFiraCode pri-col fs-24" for="message"
-            >How can I help you?</label
-          >
+          <label class="fontFiraCode pri-col fs-24" for="message">{{
+            "contact.form.message.label" | translate
+          }}</label>
           <textarea
             class="mt-4"
             id="message"
@@ -69,8 +74,8 @@
             [placeholder]="
               contactForm.controls['message'].invalid &&
               contactForm.controls['message'].touched
-                ? 'Your message must be at least 4 characters long'
-                : 'Hello Philipp, I am interested in...'
+                ? ('contact.form.message.error' | translate)
+                : ('contact.form.message.placeholder' | translate)
             "
             required
             minlength="4"
@@ -81,9 +86,13 @@
           <label class="checkbox fontKarla sec-col fs-12 mt-4">
             <input type="checkbox" formControlName="privacyPolicy" required />
             <span
-              >I've read the
-              <a [routerLink]="['/privacy-policy']"><span class="fontFiraCode pri-col">privacy policy</span></a> and agree
-              to the processing of my data as outlined.</span
+              >{{ "contact.form.privacyPolicy.label0" | translate }}
+              <a [routerLink]="['/privacy-policy']"
+                ><span class="fontFiraCode pri-col">{{
+                  "contact.form.privacyPolicy.label1" | translate
+                }}</span></a
+              >
+              {{ "contact.form.privacyPolicy.label2" | translate }}</span
             >
           </label>
           <span
@@ -94,7 +103,7 @@
                 contactForm.controls['privacyPolicy'].touched
             }"
           >
-            You must agree to the Privacy Policy
+            {{ "contact.form.privacyPolicy.error" | translate }}
           </span>
         </div>
 
@@ -105,7 +114,7 @@
             class="btn fontKarla"
             [disabled]="contactForm.invalid"
           >
-            Say Hello
+            {{ "contact.form.submit" | translate }}
           </button>
           @if (contactForm.invalid) {
           <div class="validation-overlay" (click)="triggerValidation()"></div>
@@ -114,7 +123,7 @@
 
         @if (formSubmitted) {
         <p class="success-message fontKarla fs-14 sec-col">
-          Thank you! Your message has been sent successfully.
+          {{ "contact.form.success" | translate }}
         </p>
         }
       </form>

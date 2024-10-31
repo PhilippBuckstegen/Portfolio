@@ -33,6 +33,74 @@
   "projects": {
     "portfolio": "Portfolio",
     "featuredTitle": "Meine Projekte",
-    "description": "Entdecke hier eine Auswahl meiner Arbeiten – Interagiere mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen."
+    "description": "Entdecke hier eine Auswahl meiner Arbeiten – Interagiere mit meinen Projekten, um meine Fähigkeiten in Aktion zu sehen.",
+    "overlay": {
+      "projectAbout": "Worum geht es bei diesem Projekt?",
+      "nextProject": "Nächstes Projekt"
+    },
+    "projectDetails": {
+      "1": {
+        "description": "Aufgabenmanager, inspiriert vom Kanban-System. Aufgaben erstellen und organisieren mit Drag-and-Drop-Funktionen, Benutzer und Kategorien zuweisen."
+      },
+      "2": {
+        "description": "Jump'n'Run-Spiel, basierend auf objektorientiertem Ansatz. Hilf Pepe, Münzen und Tabasco-Salsa zu finden, um gegen das verrückte Huhn zu kämpfen."
+      },
+      "3": {
+        "description": "Meine persönliche Website mit verschiedenen Programmierprojekten. Verschaffen Sie sich einen ersten Eindruck von mir und meinen Fähigkeiten."
+      },
+      "4": {
+        "description": "Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert."
+      }
+    }
+  },
+  "references": {
+    "title": "Was meine Kollegen über mich sagen",
+    "entries": {
+      "1": {
+        "text": "Philipp ist ein äußerst zuverlässiger und freundlicher Teamkollege. Er bringt immer großartige Ideen ein und trägt erheblich zum Erfolg unseres Teams bei. Seine positive Einstellung und Kreativität sind für uns alle ein echter Gewinn."
+      },
+      "2": {
+        "text": "Philipp spielte eine Schlüsselrolle für den Erfolg unseres Projekts durch seine Hingabe und Fähigkeit, alle Aufgaben effektiv zu bewältigen. Seine Expertise in CSS, JavaScript und HTML sowie sein wertvoller Input bereicherten das Team. Seine freundliche und motivierende Art trug auch zur hohen Team-Moral bei."
+      },
+      "3": {
+        "text": "Philipp erwies sich als äußerst kompetenter und engagierter Kollege im Programmieren. Sein schnelles Verständnis und seine kreative Problemlösung waren beeindruckend. Immer hilfsbereit, bot er gezielte Unterstützung bei anspruchsvollen Aufgaben. Sein Engagement stellte sicher, dass unsere Projekte erfolgreich und pünktlich abgeschlossen wurden, was seinen lösungsorientierten Ansatz und Teamgeist unverzichtbar machte."
+      },
+      "4": {
+        "text": "Philipp war ein natürlicher Führer, der ein positives, kooperatives Umfeld förderte. Er teilte Aufgaben basierend auf den Stärken des Teams zu und übernahm oft selbst die schwierigsten Herausforderungen. Seine Fähigkeit, praktische Lösungen für komplexe Probleme zu finden, und seine Detailgenauigkeit verbesserten nicht nur die Projektqualität, sondern inspirierten das Team zu Höchstleistungen."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontaktiere mich",
+    "subtitle": "Lass uns zusammenarbeiten",
+    "question": "Hast du ein Problem zu lösen?",
+    "intro": "Kontaktiere mich über dieses Formular. Ich bin daran interessiert, von dir zu hören, deine Ideen zu kennen und mit meiner Arbeit zu deinen Projekten beizutragen.",
+    "cta0": "Brauchst du einen Frontend-Entwickler?",
+    "cta1": "Lass uns reden!",
+    "form": {
+      "name": {
+        "label": "Wie ist dein Name?",
+        "placeholder": "Dein Name hier",
+        "error": "Bitte gib deinen Namen ein"
+      },
+      "email": {
+        "label": "Wie lautet deine E-Mail?",
+        "placeholder": "deinemail@email.com",
+        "error": "Bitte gib eine gültige E-Mail-Adresse ein"
+      },
+      "message": {
+        "label": "Wie kann ich dir helfen?",
+        "placeholder": "Hallo Philipp, ich interessiere mich für...",
+        "error": "Deine Nachricht muss mindestens 4 Zeichen lang sein"
+      },
+      "privacyPolicy": {
+        "label0": "Ich habe die",
+        "label1": "Datenschutzbestimmungen",
+        "label2": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+        "error": "Du musst den Datenschutzbestimmungen zustimmen"
+      },
+      "submit": "Sag Hallo",
+      "success": "Danke! Deine Nachricht wurde erfolgreich gesendet."
+    }
   }
 }

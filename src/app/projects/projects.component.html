@@ -36,7 +36,6 @@
           />
         </div>
       </div>
-
       }
     </div>
   </div>
@@ -51,7 +50,7 @@
           {{ selectedProject?.title }}
         </p>
         <p class="project-about fontFiraCode-700 fs-24 pri-col">
-          What is this project about?
+          {{ "projects.overlay.projectAbout" | translate }}
         </p>
         <p class="description fontKarla fs-18 sec-col">
           {{ selectedProject?.description }}
@@ -82,7 +81,9 @@
         </div>
         <img src="{{ selectedProject?.image }}" alt="Project Overlay Image" />
         <div class="next-project" (click)="showNextProject()">
-          <span class="fontKarla fs-18 pri-col">Next Project</span>
+          <span class="fontKarla fs-18 pri-col">{{
+            "projects.overlay.nextProject" | translate
+          }}</span>
           <img src="/assets/icons/arrow_forward.svg" alt="Next Project" />
         </div>
       </div>

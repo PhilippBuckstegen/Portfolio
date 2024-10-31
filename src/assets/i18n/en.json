@@ -33,6 +33,74 @@
   "projects": {
     "portfolio": "Portfolio",
     "featuredTitle": "Featured Projects",
-    "description": "Explore a selection of my work here - Interact with projects to see my skills in action."
+    "description": "Explore a selection of my work here - Interact with projects to see my skills in action.",
+    "overlay": {
+      "projectAbout": "What is this project about?",
+      "nextProject": "Next Project"
+    },
+    "projectDetails": {
+      "1": {
+        "description": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories."
+      },
+      "2": {
+        "description": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen."
+      },
+      "3": {
+        "description": "My personal website presenting various programming projects. Get a first impression of me and my skills."
+      },
+      "4": {
+        "description": "Based on the PokéAPI, a simple library that provides and catalogues Pokémon information."
+      }
+    }
+  },
+  "references": {
+    "title": "What my colleagues say about me",
+    "entries": {
+      "1": {
+        "text": "Philipp is an extremely reliable and friendly team colleague. He always comes up with great ideas and contributes significantly to the success of our team. His positive attitude and creativity are a real asset to us all."
+      },
+      "2": {
+        "text": "Philipp played a key role in the success of our project with his dedication and ability to manage all tasks effectively. His expertise in CSS, JavaScript, and HTML, along with his valuable input, enriched the team. His friendly and motivating nature also helped maintain high team morale."
+      },
+      "3": {
+        "text": "Philipp proved to be a highly competent and dedicated colleague in programming. His quick understanding and creative problem-solving were impressive. Always helpful, he provided focused support on challenging tasks. His commitment ensured our projects were completed successfully and on time, making his solution-oriented approach and team spirit invaluable."
+      },
+      "4": {
+        "text": "Philipp was a natural leader who fostered a positive, collaborative environment. He assigned tasks based on team strengths and often tackled the toughest challenges himself. His ability to find practical solutions to complex problems and his attention to detail not only improved project quality but also inspired the team to excel."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "subtitle": "Let's work together",
+    "question": "Got a problem to solve?",
+    "intro": "Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.",
+    "cta0": "Need a Frontend developer?",
+    "cta1": "Let’s talk!",
+    "form": {
+      "name": {
+        "label": "What's your name?",
+        "placeholder": "Your name goes here",
+        "error": "Please enter your name"
+      },
+      "email": {
+        "label": "What's your email?",
+        "placeholder": "youremail@email.com",
+        "error": "Please enter a valid email address"
+      },
+      "message": {
+        "label": "How can I help you?",
+        "placeholder": "Hello Philipp, I am interested in...",
+        "error": "Your message must be at least 4 characters long"
+      },
+      "privacyPolicy": {
+          "label0": "I've read the",
+          "label1": "privacy policy",
+          "label2": "and agree to the processing of my data as outlined.",
+          "error": "You must agree to the Privacy Policy"
+      },
+      "submit": "Say Hello",
+      "success": "Thank you! Your message has been sent successfully."
+    }
   }
 }
