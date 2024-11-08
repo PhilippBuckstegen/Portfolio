@@ -15,7 +15,7 @@
     <div class="projects-list">
       @for (project of projects; track $index) {
       <div class="project-item" (click)="openOverlay(project)">
-        <h3 class="sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
+        <h3 class="project-title sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
         <p class="fontKarla fs-18 sec-col">
           @for (skill of project.usedSkills; track $index) {
           <span>{{ skill }}</span>

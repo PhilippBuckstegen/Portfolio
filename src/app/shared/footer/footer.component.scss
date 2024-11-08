@@ -48,3 +48,15 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+    .footer {
+      padding: 40px;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .footer {
+      padding: 40px 20px;
+    }
+  }

@@ -153,4 +153,14 @@
   .burger-menu {
     display: flex;
   }
+
+  .header-content {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-content {
+    padding: 40px 20px;
+  }
 }

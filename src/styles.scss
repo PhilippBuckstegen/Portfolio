@@ -182,3 +182,21 @@ html {
     transition: transform 0.3s ease-in-out;
   }
 }
+
+@media (max-width: 768px) {
+  #about,
+  #skills,
+  #projects,
+  #contact {
+    padding: 96px 40px;
+  }
+}
+
+@media (max-width: 380px) {
+  #about,
+  #skills,
+  #projects,
+  #contact {
+    padding: 96px 20px;
+  }
+}
