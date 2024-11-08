@@ -152,15 +152,32 @@
 
   .burger-menu {
     display: flex;
+    .close-icon {
+      right: 40px;
+    }
   }
 
   .header-content {
     padding: 40px;
+  }
+
+  .overlay.active {
+    right: 40px;
   }
 }
 
 @media (max-width: 380px) {
   .header-content {
     padding: 40px 20px;
+  }
+
+  .burger-menu {
+    .close-icon {
+      right: 20px;
+    }
+  }
+
+  .overlay.active {
+    right: 20px;
   }
 }
