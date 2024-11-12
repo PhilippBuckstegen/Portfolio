@@ -3,20 +3,20 @@
     <p class="fontKarla-700 info-heading">
       {{ "projects.portfolio" | translate }}
     </p>
-    <h1 class="info-title fontFiraCode-700">
+    <h1 id="projectTitle" class="info-title fontFiraCode-700">
       {{ "projects.featuredTitle" | translate }}
     </h1>
-    <p class="fontKarla fs-18 sec-col mb-20 info-description">
+    <p id="projectInfo" class="fontKarla fs-18 sec-col mb-20 info-description">
       {{ "projects.description" | translate }}
     </p>
   </div>
 
   <div class="projects">
-    <div class="projects-list">
+    <div id="projectList" class="projects-list">
       @for (project of projects; track $index) {
-      <div class="project-item" (click)="openOverlay(project)">
-        <h3 class="project-title sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
-        <p class="fontKarla fs-18 sec-col">
+      <div id="projectItem" class="project-item" (click)="openOverlay(project)">
+        <h3 id="projectSingleTitle" class="project-title sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
+        <p id="projectSkills" class="fontKarla fs-18 sec-col">
           @for (skill of project.usedSkills; track $index) {
           <span>{{ skill }}</span>
           @if (skill !== project.usedSkills[project.usedSkills.length - 1]) {

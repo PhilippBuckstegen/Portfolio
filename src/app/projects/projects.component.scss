@@ -274,4 +274,46 @@
   }
 }
 
+@media (max-width: 490px) {
+  #projectTitle {
+    font-size: 56px;
+    line-height: normal;
+  }
+}
 
+@media (max-width: 450px) {
+  #projectTitle {
+    font-size: 48px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 410px) {
+  #projectTitle {
+    font-size: 42px;
+    line-height: normal;
+    margin-bottom: 18px;
+  }
+
+  #projectSkills,
+  #projectInfo {
+    font-size: 16px;
+    line-height: 19.6px;
+  }
+
+  #projectItem {
+    padding: 24px 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  #projectSkills,
+  #projectInfo {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  #projectSingleTitle {
+    font-size: 20px;
+  }
+}

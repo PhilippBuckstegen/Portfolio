@@ -63,7 +63,6 @@
     }
   }
 
-  /* Grid layout for icons */
   .skills-icons {
     width: 60%;
     display: flex;
@@ -107,7 +106,6 @@
           text-align: center;
         }
 
-        /* Growth Mindset Interest */
         .growth-mindset {
           position: absolute;
           bottom: 96%;
@@ -174,5 +172,70 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 1050px) {
+  .skill-set-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-set-container {
+    .info-container,
+    .skills-icons {
+      width: 96%;
+    }
+  }
+}
+
+@media (max-width: 490px) {
+  #skillSetTitle {
+    font-size: 56px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 450px) {
+  #skillSetTitle {
+    font-size: 48px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 410px) {
+  #skillSetTitle {
+    font-size: 42px;
+    line-height: normal;
+    margin-bottom: 18px;
+  }
+
+  #skills {
+    padding-top: 72px;
+  }
+
+  #skillSetInfo,
+  #skillSetAnotherInfo,
+  #skillBtn {
+    font-size: 16px;
+    line-height: 19.6px;
+  }
+
+  #skillSetInfo,
+  #skillSetAnotherInfo {
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  #infoBoxContainer {
+    padding: 20px 20px 24px 20px;
+  }
+
+  #skillSetInfo,
+  #skillSetAnotherInfo {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 16px;
   }
 }
