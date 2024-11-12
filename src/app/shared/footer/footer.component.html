@@ -1,7 +1,12 @@
 <footer class="footer">
   <div class="footer-content">
     <div class="left">
-      <img (click)="navigateAndScroll('hero')" class="pb-logo" src="/assets/img/pb-logo.svg" alt="Logo" />
+      <img
+        (click)="navigateAndScroll('hero')"
+        class="pb-logo"
+        src="/assets/img/pb-logo.svg"
+        alt="Logo"
+      />
       <span>Web Developer</span>
       <span>Essen Germany</span>
     </div>
@@ -32,5 +37,10 @@
         <span>Legal Notice</span>
       </a>
     </div>
+  </div>
+  <div class="center-mobile">
+    <span class="fontFiraCode pri-col fs-14"
+      >&copy; Philipp Buckstegen {{ currentYear }}</span
+    >
   </div>
 </footer>

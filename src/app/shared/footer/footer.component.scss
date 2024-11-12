@@ -12,10 +12,10 @@
     width: 100%;
 
     .pb-logo {
-        cursor: pointer;
-        width: 64px;
-        height: auto;
-        margin-bottom: 16px;
+      cursor: pointer;
+      width: 64px;
+      height: auto;
+      margin-bottom: 16px;
     }
 
     .left,
@@ -50,13 +50,32 @@
 }
 
 @media (max-width: 768px) {
-    .footer {
-      padding: 40px;
-    }
+  .footer {
+    padding: 40px;
   }
-  
-  @media (max-width: 380px) {
-    .footer {
-      padding: 40px 20px;
-    }
+}
+
+.center-mobile {
+    display: none;
+}
+
+@media (max-width: 560px) {
+  .center {
+    display: none;
   }
+
+  .center-mobile {
+    display: flex;
+    margin-top: 32px;
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 380px) {
+  .footer {
+    padding: 40px 20px;
+  }
+}

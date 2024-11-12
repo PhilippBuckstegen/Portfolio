@@ -157,3 +157,66 @@
     }
   }
 }
+
+@media (max-width: 1050px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: start;
+    .contact-left,
+    .contact-right {
+      width: 100%;
+      .contact-form {
+        align-items: normal;
+      }
+    }
+  }
+}
+
+@media (max-width: 490px) {
+  #contactTitle {
+    font-size: 56px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 450px) {
+  #contactTitle {
+    font-size: 48px;
+    line-height: normal;
+  }
+}
+
+@media (max-width: 410px) {
+  #contactTitle {
+    font-size: 42px;
+    line-height: normal;
+    margin-bottom: 20px;
+  }
+
+  #contactIntro,
+  #contactCta {
+    font-size: 16px;
+    line-height: 19.6px;
+  }
+
+  #contact {
+    gap: 24px;
+    padding-top: 24px;
+  }
+
+  label {
+    font-size: 19px;
+  }
+
+  #privacyPolicyInfo {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  #contactIntro,
+  #contactCta {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}

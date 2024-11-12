@@ -4,16 +4,16 @@
       <p class="fontKarla-700 info-heading">
         {{ "contact.title" | translate }}
       </p>
-      <h1 class="info-title fontFiraCode-700">
+      <h1 id="contactTitle" class="info-title fontFiraCode-700">
         {{ "contact.subtitle" | translate }}
       </h1>
       <p class="fontFiraCode-700 pri-col fs-24 mb-20">
         {{ "contact.question" | translate }}
       </p>
-      <p class="fontKarla fs-18 sec-col mb-20">
+      <p id="contactIntro" class="fontKarla fs-18 sec-col mb-20">
         {{ "contact.intro" | translate }}
       </p>
-      <p class="fontKarla fs-18 sec-col mb-20">
+      <p id="contactCta" class="fontKarla fs-18 sec-col mb-20">
         {{ "contact.cta0" | translate }}
         <span class="fontKarla-700 pri-col">{{
           "contact.cta1" | translate
@@ -83,7 +83,7 @@
         </div>
 
         <div class="form-group">
-          <label class="checkbox fontKarla sec-col fs-12 mt-4">
+          <label id="privacyPolicyInfo" class="checkbox fontKarla sec-col fs-12 mt-4">
             <input type="checkbox" formControlName="privacyPolicy" required />
             <span
               >{{ "contact.form.privacyPolicy.label0" | translate }}
