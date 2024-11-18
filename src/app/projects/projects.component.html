@@ -43,8 +43,8 @@
 
   <!-- Render overlay -->
   <div class="project-overlay" [ngClass]="{ active: isOverlayOpen }">
-    <div class="overlay-content">
-      <div class="overlay-left">
+    <div id="overlayContent" class="overlay-content">
+      <div id="overlayLeft" class="overlay-left">
         <p class="count fontKarla-700 pri-col">{{ selectedProject?.count }}</p>
         <p class="title fontFiraCode-700 sec-col">
           {{ selectedProject?.title }}
@@ -75,7 +75,7 @@
         </div>
       </div>
 
-      <div class="overlay-right">
+      <div id="overlayRight" class="overlay-right">
         <div class="close-btn" (click)="closeOverlay()">
           <img src="/assets/icons/close_small.svg" alt="close" />
         </div>

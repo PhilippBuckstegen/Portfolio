@@ -317,3 +317,43 @@
     font-size: 20px;
   }
 }
+
+// Overlay Styles
+
+@media (max-width: 950px) {
+  #overlayLeft {
+    .title {
+      font-size: 54px;
+      line-height: 58.2px;
+    }
+  }
+}
+
+@media (max-width: 860px) {
+  #overlayContent {
+    flex-direction: column-reverse;
+    height: auto;
+    #overlayLeft {
+      justify-content: flex-start;
+      width: 100%;
+      gap: 22px;
+      .count {
+        font-size: 100px;
+        line-height: 70px;
+      }
+      .title {
+        font-size: 54px;
+        line-height: 56.2px;
+      }
+    }
+    #overlayRight {
+      justify-content: flex-start;
+      width: 70%;
+    }
+
+  }
+
+  .project-overlay {
+    height: 90%;
+  }
+}
