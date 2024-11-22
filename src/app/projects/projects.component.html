@@ -63,15 +63,21 @@
           </div>
           }
         </div>
-        <div class="overlay-btns">
-          <button class="btn fontKarla">
+        <div id="overlayBtns" class="overlay-btns">
+          <button class="overlayBtn btn fontKarla">
             GitHub
             <img src="/assets/icons/arrow_outward.svg" alt="GitHub Arrow" />
           </button>
-          <button class="btn fontKarla">
+          <button class="overlayBtn btn fontKarla">
             Live Test
             <img src="/assets/icons/arrow_outward.svg" alt="Live Test Arrow" />
           </button>
+          <div id="nextProjectMobile" class="next-project-mobile" (click)="showNextProject()">
+            <span class="fontKarla fs-18 pri-col">{{
+              "projects.overlay.nextProject" | translate
+            }}</span>
+            <img src="/assets/icons/arrow_forward.svg" alt="Next Project" />
+          </div>
         </div>
       </div>
 
