@@ -15,7 +15,12 @@
     <div id="projectList" class="projects-list">
       @for (project of projects; track $index) {
       <div id="projectItem" class="project-item" (click)="openOverlay(project)">
-        <h3 id="projectSingleTitle" class="project-title sec-col fs-24 fontFiraCode-700">{{ project.title }}</h3>
+        <h3
+          id="projectSingleTitle"
+          class="project-title sec-col fs-24 fontFiraCode-700"
+        >
+          {{ project.title }}
+        </h3>
         <p id="projectSkills" class="fontKarla fs-18 sec-col">
           @for (skill of project.usedSkills; track $index) {
           <span>{{ skill }}</span>
@@ -57,22 +62,31 @@
         </p>
         <div class="overlay-skills">
           @for (item of getCombinedSkillsAndIcons(); track $index) {
-          <div class="icons-and-skills">
+          <div id="iconsSkills" class="icons-and-skills">
             <img src="{{ item.icon }}" alt="Overlay Skill" />
             <span class="fontKarla sec-col">{{ item.skill }}</span>
           </div>
           }
         </div>
         <div id="overlayBtns" class="overlay-btns">
-          <button class="overlayBtn btn fontKarla">
-            GitHub
-            <img src="/assets/icons/arrow_outward.svg" alt="GitHub Arrow" />
-          </button>
-          <button class="overlayBtn btn fontKarla">
-            Live Test
-            <img src="/assets/icons/arrow_outward.svg" alt="Live Test Arrow" />
-          </button>
-          <div id="nextProjectMobile" class="next-project-mobile" (click)="showNextProject()">
+          <div class="overlay-btns-mobile">
+            <button class="overlayBtn btn fontKarla">
+              GitHub
+              <img src="/assets/icons/arrow_outward.svg" alt="GitHub Arrow" />
+            </button>
+            <button class="overlayBtn btn fontKarla">
+              Live Test
+              <img
+                src="/assets/icons/arrow_outward.svg"
+                alt="Live Test Arrow"
+              />
+            </button>
+          </div>
+          <div
+            id="nextProjectMobile"
+            class="next-project-mobile"
+            (click)="showNextProject()"
+          >
             <span class="fontKarla fs-18 pri-col">{{
               "projects.overlay.nextProject" | translate
             }}</span>
