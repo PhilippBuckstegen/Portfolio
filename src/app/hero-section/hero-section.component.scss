@@ -6,6 +6,16 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+
+  .content-wrapper {
+    max-width: 1400px; /* Maximalbreite */
+    margin: 0 auto; /* Zentriert den Inhalt */
+    padding: 0 32px; /* Innenabstand für kleinere Bildschirme */
+    width: 100%; /* Volle Breite für kleinere Screens */
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+  }
 }
 
 .headline-section {
@@ -38,11 +48,11 @@
 .ticker {
   position: absolute;
   bottom: 80px;
-  left: -8px;
+  left: -10%;
+  width: 208%;
   transform: rotate(-4deg);
   padding: 14px;
   height: 40px;
-  width: 100%;
   background-color: rgba(255, 255, 255, 0.12);
   box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.06);
   z-index: 8;

@@ -1,60 +1,65 @@
 <section id="hero" class="hero-section">
-  <div class="headline-section">
-    <p class="fontFiraCode">Frontend Developer</p>
-    <h1 class="fontKarla-700">Philipp Buckstegen</h1>
-    <div class="hero-btn">
-      <button class="btn fontKarla" (click)="navigateAndScroll('projects')">
-        {{ "hero.btn-projects" | translate }}
-      </button>
-      <button class="btn fontKarla" (click)="navigateAndScroll('contact')">
-        {{ "hero.btn-contact" | translate }}
-      </button>
-    </div>
-  </div>
-  <div class="ticker">
-    <div class="ticker-content">
-      <span class="fontKarla">{{ "hero.ticker" | translate }}</span>
-      <span class="fontKarla">&nbsp;{{ "hero.ticker" | translate }}</span>
-    </div>
-  </div>
-  <div class="circle-container">
-    <div class="circle">
-      <img src="./assets/img/hero_rectangle.svg" alt="rectangle" />
-      <div class="arrow">
-        <img src="./assets/img/hero_arrow.svg" alt="arrow" />
+  <div class="content-wrapper">
+    <div class="headline-section">
+      <p class="fontFiraCode">Frontend Developer</p>
+      <h1 class="fontKarla-700">Philipp Buckstegen</h1>
+      <div class="hero-btn">
+        <button class="btn fontKarla" (click)="navigateAndScroll('projects')">
+          {{ "hero.btn-projects" | translate }}
+        </button>
+        <button class="btn fontKarla" (click)="navigateAndScroll('contact')">
+          {{ "hero.btn-contact" | translate }}
+        </button>
       </div>
     </div>
-    <div class="vertical-line"></div>
-  </div>
-
-  <div class="hero-contact-container">
-    <div class="mail-address">
-      <a href="mailto:hello@philippbuckstegen.com" class="fontKarla email-link"
-        >hello&#64;philippbuckstegen.com</a
-      >
+    <div class="ticker">
+      <div class="ticker-content">
+        <span class="fontKarla">{{ "hero.ticker" | translate }}</span>
+        <span class="fontKarla">&nbsp;{{ "hero.ticker" | translate }}</span>
+      </div>
+    </div>
+    <div class="circle-container">
+      <div class="circle">
+        <img src="./assets/img/hero_rectangle.svg" alt="rectangle" />
+        <div class="arrow">
+          <img src="./assets/img/hero_arrow.svg" alt="arrow" />
+        </div>
+      </div>
+      <div class="vertical-line"></div>
     </div>
 
-    <div class="social-icons">
-      <img class="mobile-mail"
-        src="./assets/icons/mail_mobile.svg"
-        alt="GitHub"
-        href="mailto:hello@philippbuckstegen.com"
-        target="_blank"
-      />
-      <img
-        src="./assets/icons/hero_git.svg"
-        alt="GitHub"
-        href="https://github.com"
-        target="_blank"
-      />
-      <img
-        src="./assets/icons/hero_linkedin.svg"
-        alt="LinkedIn"
-        href="https://linkedin.com"
-        target="_blank"
-      />
-    </div>
+    <div class="hero-contact-container">
+      <div class="mail-address">
+        <a
+          href="mailto:hello@philippbuckstegen.com"
+          class="fontKarla email-link"
+          >hello&#64;philippbuckstegen.com</a
+        >
+      </div>
 
-    <div class="vertical-line-right"></div>
+      <div class="social-icons">
+        <img
+          class="mobile-mail"
+          src="./assets/icons/mail_mobile.svg"
+          alt="GitHub"
+          href="mailto:hello@philippbuckstegen.com"
+          target="_blank"
+        />
+        <img
+          src="./assets/icons/hero_git.svg"
+          alt="GitHub"
+          href="https://github.com"
+          target="_blank"
+        />
+        <img
+          src="./assets/icons/hero_linkedin.svg"
+          alt="LinkedIn"
+          href="https://linkedin.com"
+          target="_blank"
+        />
+      </div>
+
+      <div class="vertical-line-right"></div>
+    </div>
   </div>
 </section>

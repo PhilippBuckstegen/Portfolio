@@ -2,7 +2,7 @@
   <div class="references-content">
     <h2 class="fontFiraCode-700 pri-col fs-32">{{ "references.title" | translate }}</h2>
     <div class="references-carousel">
-      <div
+      <div id="carouselTrack"
         class="carousel-track"
         [ngClass]="{
           animate: animate,
@@ -11,7 +11,7 @@
         }"
       >
         @for (reference of getVisibleReferences(); track $index) {
-        <div
+        <div id="referenceContainer"
           class="reference-container"
           [ngClass]="{
             active: $index === 1,
@@ -19,7 +19,7 @@
             right: $index === 2
           }"
         >
-          <div class="reference-content">
+          <div id="referenceContent" class="reference-content">
             <p class="fontKarla fs-14 sec-col reference-text">{{ reference.text }}</p>
             <div class="reference-author">
               <div class="line"></div>
